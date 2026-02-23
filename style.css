@@ -158,14 +158,13 @@ h6 {
 
 /* Header */
 .header {
-    background: rgba(255, 255, 255, 0.95);
+    background: #ffffff !important;
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(15, 23, 42, 0.05);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    padding: 1rem 0;
     transition: var(--transition);
     box-shadow: var(--shadow-sm);
 }
@@ -178,12 +177,24 @@ h6 {
 
 .logo {
     display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-info {
+    display: flex;
     flex-direction: column;
+    line-height: 35px;
 }
 
 .logo-text {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--primary-color);
     letter-spacing: -0.5px;
@@ -572,24 +583,143 @@ h6 {
 
 
 
-.subsection-title {
+/* Chairman Message Section */
+.chairman-section {
+    padding: 80px 0;
+    background-color: var(--background-alt);
+    position: relative;
+}
+
+.chairman-wrapper {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.chairman-visual {
+    flex: 0 0 400px;
+    position: relative;
+}
+
+.chairman-content {
+    flex: 1;
+}
+
+.chairman-img {
+    width: 100%;
+    border-radius: 15px;
+    filter: grayscale(1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.visual-quote-overlay {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #E67E22;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+    z-index: 2;
+}
+
+.chairman-cta {
+    text-align: end;
+}
+
+.chairman-content h3 {
+    font-family: var(--font-heading);
     font-size: 2rem;
-    color: var(--primary-color);
+    color: #1a1a1a;
     margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.chairman-content h3::after {
+    display: none;
+}
+
+.chairman-intro {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 2rem;
 }
 
 .chairman-content blockquote {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
-    font-style: italic;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
     line-height: 1.5;
-    border-left: 4px solid var(--accent-gold);
-    padding-left: 1.5rem;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 1.5rem;
-    border-radius: 0 12px 12px 0;
+    margin: 2rem 0;
+    padding: 0 0 0 2rem;
+    font-style: italic;
+    border-left: 3px solid #E67E22;
+    background: none;
+}
+
+.chairman-cta .btn-outline {
+    background: transparent;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.chairman-cta .btn-outline:hover {
+    border-color: #333;
+    background: rgba(0, 0, 0, 0.02);
+    transform: none;
+}
+
+@media (max-width: 991px) {
+    .chairman-wrapper {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .chairman-visual {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .chairman-content {
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .chairman-section {
+        padding: 60px 0;
+    }
+
+    .visual-quote-overlay {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        right: -10px;
+        bottom: -10px;
+    }
+
+    .chairman-intro {
+        font-size: 1.2rem;
+    }
 }
 
 /* Chairman List */
@@ -638,7 +768,7 @@ h6 {
 
 /* Mission & Vision Section */
 .mission-section {
-    padding: 8rem 0;
+    padding: 4rem 0;
     background-color: #fcfcfc;
     position: relative;
     overflow: hidden;
@@ -1585,15 +1715,7 @@ h6 {
         font-size: 3.5rem;
     }
 
-    .chairman-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 2rem;
-    }
-
-    .chairman-visual {
-        min-height: 200px;
-    }
+    /* old chairman container removed */
 }
 
 @media (max-width: 767px) {
