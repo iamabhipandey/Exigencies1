@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Rajdhani:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,18 +25,76 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="container hero-content">
-            <h1 class="hero-headline">Your Strategic Gateway to the <span class="highlight">Indian Market</span></h1>
-            <h2 class="hero-subheadline">Bridging Global Opportunities with Indian Excellence</h2>
-            <p class="hero-subtext">Market entry, trading, and industrial solutions for global and domestic enterprises.
-            </p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn btn-primary">Explore Services</a>
-                <a href="#contact" class="btn btn-outline">Partner With Us</a>
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-grid"></div>
+        <svg class="hero-compass-bg" viewBox="0 0 700 700" fill="none">
+            <circle cx="350" cy="350" r="340" stroke="#c9a84c" stroke-width="1" />
+            <circle cx="350" cy="350" r="280" stroke="#c9a84c" stroke-width="0.5" />
+            <circle cx="350" cy="350" r="200" stroke="#c9a84c" stroke-width="0.5" />
+            <line x1="350" y1="10" x2="350" y2="690" stroke="#c9a84c" stroke-width="0.5" />
+            <line x1="10" y1="350" x2="690" y2="350" stroke="#c9a84c" stroke-width="0.5" />
+            <line x1="110" y1="110" x2="590" y2="590" stroke="#c9a84c" stroke-width="0.3" />
+            <line x1="590" y1="110" x2="110" y2="590" stroke="#c9a84c" stroke-width="0.3" />
+            <polygon points="350,20 360,345 350,335 340,345" fill="#c9a84c" />
+            <polygon points="350,680 360,355 350,365 340,355" fill="#c9a84c" opacity="0.6" />
+            <polygon points="680,350 355,340 365,350 355,360" fill="#c9a84c" opacity="0.6" />
+            <polygon points="20,350 345,340 335,350 345,360" fill="#c9a84c" opacity="0.6" />
+        </svg>
+
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <div class="hero-eyebrow-line"></div>
+                <span>Your Strategic Gateway to the Indian Market</span>
+            </div>
+            <h1>Navigate<br>Global Markets<br>with <em>Precision</em></h1>
+            <p class="hero-desc">We represent international businesses entering India — providing market intelligence,
+                regulatory guidance, distribution strategy, and on-ground execution.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary-hero">Explore Partnership</a>
+                <a href="#services" class="btn-secondary"><span>↓</span> Our Services</a>
             </div>
         </div>
+
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-num">15<span>+</span></div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">40<span>+</span></div>
+                <div class="stat-label">Global Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">28<span>+</span></div>
+                <div class="stat-label">Indian Cities</div>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <div class="hero-scroll-line"></div>
+            <span>Scroll</span>
+        </div>
     </section>
+
+    <!-- Marquee Band -->
+    <div class="marquee-band">
+        <div class="marquee-track">
+            <span class="marquee-item">Market Representation <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Trade Facilitation <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Growth Strategy <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Regulatory Compliance <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Distribution Networks <span class="marquee-dot"></span></span>
+            <span class="marquee-item">India Market Entry <span class="marquee-dot"></span></span>
+            <span class="marquee-item">B2B Sourcing <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Market Representation <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Trade Facilitation <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Growth Strategy <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Regulatory Compliance <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Distribution Networks <span class="marquee-dot"></span></span>
+            <span class="marquee-item">India Market Entry <span class="marquee-dot"></span></span>
+            <span class="marquee-item">B2B Sourcing <span class="marquee-dot"></span></span>
+        </div>
+    </div>
 
     <!-- About Us Section -->
     <section class="about" id="about">
@@ -516,11 +574,89 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="cta" id="contact">
-        <div class="container cta-content">
-            <h2>Ready to Expand into India?</h2>
-            <p>Let’s Build Your Market Together.</p>
-            <a href="mailto:contact@exigencies.in" class="btn btn-primary cta-btn">Contact Us</a>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container contact-wrapper">
+            <div class="contact-visual-side">
+                <div class="section-eyebrow">
+                    <div class="section-eyebrow-line"></div>
+                    <span>Global Reach, Local Depth</span>
+                </div>
+                <h2 class="section-title">Let's Navigate the<br>Indian Market <em>Together</em></h2>
+                <p class="contact-intro">Whether you're exploring entry or ready to scale — we provide the market
+                    intelligence and on-ground execution you need to succeed.</p>
+
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Corporate Presence</h3>
+                            <p>Mumbai · New Delhi · Bengaluru · India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Strategic Inquiries</h3>
+                            <p>info@exigenciesmercantile.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Direct Line</h3>
+                            <p>+91 (022) XXXX XXXX</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-side">
+                <div class="contact-card">
+                    <div class="card-header">
+                        <h3>Send a Message</h3>
+                        <p>We'll get back to you within 24 hours.</p>
+                    </div>
+                    <form class="actual-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-input" placeholder="e.g. John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Organization</label>
+                                <input type="text" class="form-input" placeholder="Company Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Work Email</label>
+                            <input type="email" class="form-input" placeholder="john@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Primary Interest</label>
+                            <select class="form-input">
+                                <option>Market Entry</option>
+                                <option>Trade Facilitation</option>
+                                <option>Distribution Strategy</option>
+                                <option>Other Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-textarea" placeholder="How can we assist you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary-hero"
+                            style="width: 100%; justify-content: center;">Send
+                            Inquiry</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
