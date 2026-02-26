@@ -115,7 +115,7 @@ h6 {
 .section-subtitle {
     font-size: 1.2rem;
     color: var(--text-muted);
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     font-weight: 300;
     line-height: 1.6;
 }
@@ -1162,7 +1162,7 @@ h6 {
 
 /* Services Section (Light Alt) */
 .services {
-    padding: 5rem 0;
+    padding: 3rem 0;
     background-color: var(--background-alt);
     position: relative;
 }
@@ -1181,25 +1181,139 @@ h6 {
 .services .section-header {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 5rem;
+    margin: 0 auto 3rem;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+.services-carousel-wrapper {
+    position: relative;
+    padding: 0 40px;
+}
+
+.services-swiper {
+    padding: 20px 10px 80px !important;
+}
+
+.swiper-slide {
+    height: auto !important;
 }
 
 .service-card {
+    height: 100%;
     background: #fff;
-    padding: 3rem;
+    padding: 2.5rem;
     border-radius: 24px;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     border: 1px solid rgba(0, 0, 0, 0.03);
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
 }
+
+.service-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    opacity: 0.05;
+    font-family: var(--font-heading);
+    line-height: 1;
+    z-index: 0;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-number {
+    opacity: 0.1;
+    transform: translateY(-5px);
+    color: var(--accent-gold);
+}
+
+/* Services Navigation */
+.services-nav {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.services-prev,
+.services-next {
+    width: 60px !important;
+    height: 60px !important;
+    background: var(--white) !important;
+    border: 1px solid rgba(15, 23, 42, 0.1) !important;
+    color: var(--primary-color) !important;
+    border-radius: 50% !important;
+    transition: var(--transition) !important;
+    pointer-events: auto;
+    box-shadow: var(--shadow-lg) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: absolute !important;
+    margin-top: 0 !important;
+}
+
+/* COMPLETELY HIDE SWIPER DEFAULT ICONS */
+.services-swiper .swiper-button-prev::after,
+.services-swiper .swiper-button-next::after,
+.services-nav .swiper-button-prev::after,
+.services-nav .swiper-button-next::after,
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    display: none !important;
+    content: none !important;
+}
+
+.services-prev i,
+.services-next i {
+    font-size: 1.4rem;
+    line-height: 1;
+    display: block;
+}
+
+.services-prev:hover,
+.services-next:hover {
+    background: var(--primary-color) !important;
+    color: var(--accent-gold) !important;
+    transform: translateY(0) scale(1.1);
+}
+
+.services-prev {
+    left: -10px !important;
+}
+
+.services-next {
+    right: -10px !important;
+}
+
+
+/* Pagination */
+.services-pagination {
+    bottom: 0 !important;
+}
+
+.services-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: var(--primary-color);
+    opacity: 0.2;
+    transition: var(--transition);
+}
+
+.services-pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 30px;
+    border-radius: 10px;
+}
+
+
 
 .service-card:hover {
     transform: translateY(-12px);
@@ -1270,7 +1384,7 @@ h6 {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
@@ -1960,7 +2074,7 @@ h6 {
 }
 
 .contact-text p {
-   
+
     font-size: 1.4rem;
     color: var(--white);
     font-weight: 300;
