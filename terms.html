@@ -13,62 +13,8 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Rajdhani:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="terms.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        .terms-container {
-            display: flex;
-            flex-direction: column;
-            gap: 4rem;
-        }
-
-        .term-section {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            padding-bottom: 4rem;
-            border-bottom: 1px solid #E5E7EB;
-        }
-
-        .term-section:last-child {
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        @media (min-width: 992px) {
-            .term-section {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .term-section-header {
-                grid-column: 1 / -1;
-            }
-        }
-
-        .term-points {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .term-points li {
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            line-height: 1.7;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid #F3F4F6;
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .term-points li::before {
-            content: '\f0da';
-            font-family: 'Font Awesome 6 Free';
-            color: var(--gold);
-            font-weight: 900;
-            flex-shrink: 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -77,29 +23,25 @@
     <div id="header-placeholder"></div>
 
     <!-- Term Hero -->
-    <section class="about-hero-modern"
-        style="padding: 140px 0 80px 0; background-color: var(--navy); text-align: center;">
-        <div class="parallax-bg" style="background-image: url('about_theme.png'); opacity: 0.15;"></div>
+    <section class="terms-hero">
+        <div class="parallax-bg"></div>
         <div class="container hero-container">
-            <div class="hero-content-modern" style="position: relative; z-index: 2;">
-                <h1 style="color: var(--white); font-family: var(--font-heading); font-size: clamp(40px, 6vw, 64px);">
-                    Terms of Use</h1>
+            <div class="hero-content-modern">
+                <h1>Terms of Use</h1>
             </div>
         </div>
     </section>
 
     <!-- Terms Navigation and content -->
-    <section class="terms-modern-refined" style="padding: 6rem 0; background-color: var(--cream);">
+    <section class="terms-modern-refined">
         <div class="container">
             <div class="refined-content-wrapper">
-                <div class="section-heading-perfect text-center" style="margin-bottom: 5rem;">
-                    <span class="eyebrow-text"
-                        style="color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; display: block; margin-bottom: 0.5rem;">Terms
-                        of Use</span>
-                    <h2 class="main-display-title section-title" style="margin-bottom: 1.5rem;">Governing Our
+                <div class="terms-section-heading">
+                    <span class="eyebrow-text">Terms of Use</span>
+                    <h2 class="main-display-title section-title">Governing Our
                         <em>Service Commitments</em>
                     </h2>
-                    <p class="section-subtitle" style="max-width: 800px; margin: 0 auto;">How Exigencies Mercantile
+                    <p class="section-subtitle">How Exigencies Mercantile
                         operates, delivers, and maintains obligations across all engagement categories — for
                         transparency with every partner.</p>
                 </div>
@@ -108,11 +50,8 @@
 
                     <div class="term-section" id="term-market-rep">
                         <div class="term-section-header">
-                            <h3
-                                style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--navy); margin-bottom: 1rem;">
-                                Market Representation</h3>
-                            <p class="term-intro"
-                                style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.8; border-left: 3px solid var(--gold); padding-left: 1.25rem;">
+                            <h3>Market Representation</h3>
+                            <p class="term-intro">
                                 Exigencies Mercantile India Private Limited acts as authorised representative for
                                 brands, OEMs, and international principals in India. The scope, territory, exclusivity,
                                 and commercial terms of any representation engagement are governed by a signed
@@ -137,11 +76,8 @@
 
                     <div class="term-section" id="term-trade-fac">
                         <div class="term-section-header">
-                            <h3
-                                style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--navy); margin-bottom: 1rem;">
-                                Trade Facilitation</h3>
-                            <p class="term-intro"
-                                style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.8; border-left: 3px solid var(--gold); padding-left: 1.25rem;">
+                            <h3>Trade Facilitation</h3>
+                            <p class="term-intro">
                                 All trade facilitation activities are conducted in compliance with applicable Indian
                                 import/export regulations, FSSAI requirements, GST provisions, and international trade
                                 norms. The company acts as agent, principal, or distributor as defined for each specific
@@ -168,11 +104,8 @@
 
                     <div class="term-section" id="term-market-intel">
                         <div class="term-section-header">
-                            <h3
-                                style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--navy); margin-bottom: 1rem;">
-                                Market Intelligence</h3>
-                            <p class="term-intro"
-                                style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.8; border-left: 3px solid var(--gold); padding-left: 1.25rem;">
+                            <h3>Market Intelligence</h3>
+                            <p class="term-intro">
                                 Market intelligence, research reports, industry analyses, and competitive assessments
                                 are prepared in good faith based on available information. These materials are intended
                                 for the internal strategic use of the commissioning client and are strictly
@@ -198,11 +131,8 @@
 
                     <div class="term-section" id="term-reg-advisory">
                         <div class="term-section-header">
-                            <h3
-                                style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--navy); margin-bottom: 1rem;">
-                                Regulatory Advisory</h3>
-                            <p class="term-intro"
-                                style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.8; border-left: 3px solid var(--gold); padding-left: 1.25rem;">
+                            <h3>Regulatory Advisory</h3>
+                            <p class="term-intro">
                                 Regulatory advisory is provided as guidance based on current laws and regulations across
                                 FSSAI, BIS, CDSCO, GST, DGFT, Companies Act, and sector-specific frameworks. Clients are
                                 responsible for obtaining independent legal counsel before making compliance decisions.
@@ -211,7 +141,7 @@
                         <ul class="term-points">
                             <li>Advisory is based on laws and notifications current at time of delivery</li>
                             <li>Clients must verify requirements with authorised legal and statutory advisors</li>
-                            <li>Exigencies Mercantile is not a law firm and does not provide legal opinion</li>
+                            <li>Exigencies Mercantile is not a law firm and does provide legal opinion</li>
                             <li>Covers: FSSAI, BIS, CDSCO, GST, DGFT, Companies Act frameworks</li>
                         </ul>
                         <ul class="term-points">
@@ -224,11 +154,8 @@
 
                     <div class="term-section" id="term-dist-strat">
                         <div class="term-section-header">
-                            <h3
-                                style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--navy); margin-bottom: 1rem;">
-                                Distribution Strategy</h3>
-                            <p class="term-intro"
-                                style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.8; border-left: 3px solid var(--gold); padding-left: 1.25rem;">
+                            <h3>Distribution Strategy</h3>
+                            <p class="term-intro">
                                 Distribution strategies, channel plans, and go-to-market frameworks are tailored to each
                                 client's product, market, and commercial objectives. All distribution partnerships
                                 facilitated by Exigencies Mercantile are entered into on behalf of the principal only

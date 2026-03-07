@@ -1,0 +1,123 @@
+/* Terms Page Specific Styles */
+
+.terms-hero {
+    padding: 140px 0 80px 0;
+    background-color: var(--navy);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.terms-hero .parallax-bg {
+    background-image: url('about_theme.png');
+    opacity: 0.15;
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.terms-hero h1 {
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: clamp(40px, 6vw, 64px);
+    position: relative;
+    z-index: 2;
+}
+
+.terms-modern-refined {
+    padding: 6rem 0;
+    background-color: var(--cream);
+}
+
+.terms-section-heading {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.terms-section-heading .eyebrow-text {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.terms-section-heading .main-display-title {
+    margin-bottom: 1.5rem;
+}
+
+.terms-section-heading .section-subtitle {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.terms-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.term-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.term-section:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+@media (min-width: 992px) {
+    .term-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .term-section-header {
+        grid-column: 1 / -1;
+    }
+}
+
+.term-section-header h3 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+.term-intro {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 0;
+}
+
+.term-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.term-points li {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.7;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #F3F4F6;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.term-points li::before {
+    content: '\f0da';
+    font-family: 'Font Awesome 6 Free';
+    color: var(--gold);
+    font-weight: 900;
+    flex-shrink: 0;
+}

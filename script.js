@@ -99,12 +99,15 @@ function initUI() {
 
     // Header Scroll Effect
     const header = document.getElementById('header');
+    const topHeader = document.querySelector('.top-header');
     if (header) {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 30) {
+            if (window.scrollY > 20) {
                 header.classList.add('scrolled');
+                if (topHeader) topHeader.classList.add('hide-top');
             } else {
                 header.classList.remove('scrolled');
+                if (topHeader) topHeader.classList.remove('hide-top');
             }
         });
     }
