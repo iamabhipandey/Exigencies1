@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries We Serve | Exigencies Mercantile India Private Limited</title>
+    <meta name="description"
+        content="Discover the major industries served by Exigencies Mercantile India, from K-Beauty and Medical Implants to Heavy Equipment and Real Estate.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Modern Parallax Hero Section -->
+    <section class="about-hero-modern">
+        <div class="parallax-bg" style="background-image: url('about_theme.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content-modern text-center">
+                <span class="eyebrow-text reveal">Global Industries · Indian Focus</span>
+                <h1 class="reveal" style="font-size: 4rem;">Industries We Serve</h1>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .industries-detail-section {
+            background-color: var(--navy);
+            background-image: linear-gradient(rgba(27, 42, 74, 0.95), rgba(27, 42, 74, 0.95)), url('about_theme.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            overflow: hidden;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .ind-item-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            padding: 8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .ind-item-row:last-child {
+            border-bottom: none;
+        }
+
+        .ind-item-row:nth-child(even) .ind-item-text {
+            order: 2;
+        }
+
+        .ind-item-row:nth-child(even) .ind-item-visual {
+            order: 1;
+        }
+
+        .ind-item-text .section-label {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .ind-item-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+            line-height: 1.1;
+        }
+
+        .ind-item-text h2 em {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .ind-item-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2.5rem;
+        }
+
+        .ind-feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ind-feature-list li {
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            padding-left: 2.5rem;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .ind-feature-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+
+        .ind-item-visual {
+            position: relative;
+        }
+
+        .ind-img-wrapper {
+            width: 100%;
+            height: 550px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ind-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .ind-item-row:hover .ind-img-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .visual-accent {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 2px solid var(--gold);
+            z-index: 1;
+            opacity: 0.2;
+            transition: all 0.6s ease;
+        }
+
+        .ind-item-row:hover .visual-accent {
+            opacity: 0.5;
+            transform: translate(10px, 10px);
+        }
+
+        .accent-top-right {
+            top: -40px;
+            right: -40px;
+        }
+
+        .accent-bottom-left {
+            bottom: -40px;
+            left: -40px;
+        }
+
+        .vertical-badge {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            background: var(--gold);
+            color: var(--navy);
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            padding: 0.6rem 1.4rem;
+            border-radius: 6px;
+            z-index: 3;
+            text-transform: uppercase;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 991px) {
+            .ind-item-row {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+                padding: 6rem 0;
+            }
+
+            .ind-item-row:nth-child(even) .ind-item-text {
+                order: 1;
+            }
+
+            .ind-item-row:nth-child(even) .ind-item-visual {
+                order: 2;
+            }
+
+            .ind-img-wrapper {
+                height: 400px;
+            }
+
+            .ind-item-text h2 {
+                font-size: 2.4rem;
+            }
+
+            .visual-accent {
+                display: none;
+            }
+        }
+    </style>
+
+    <section class="about-style-industry"
+        style="padding: 8rem 0; background-color: var(--background-light); position: relative; overflow: hidden;">
+        <div class="container about-grid-container">
+            <div class="about-content-side">
+                <h3 class="subsection-tagline">Industry Sector 01</h3>
+                <h2 class="section-title"
+                    style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.8rem; line-height: 1.15;">
+                    Infrastructure & <em>Construction</em>
+                </h2>
+                <div class="about-main-text">
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.5rem;">
+                        India's infrastructure sector is experiencing unprecedented investment under the National
+                        Infrastructure Pipeline. We provide a single-window ecosystem for project developers and
+                        construction giants.</p>
+
+                    <div
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 2.5rem; margin-bottom: 2.5rem;">
+                        <div
+                            style="background: var(--primary-color); padding: 1.5rem; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; transition: transform 0.3s ease;">
+                            <span
+                                style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: var(--accent-gold); display: block; line-height: 1; margin-bottom: 0.5rem;">300+</span>
+                            <span
+                                style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255, 255, 255, 0.8);">Machinery
+                                Types</span>
+                        </div>
+                        <div
+                            style="background: var(--accent-gold); padding: 1.5rem; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; transition: transform 0.3s ease;">
+                            <span
+                                style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: var(--primary-color); display: block; line-height: 1; margin-bottom: 0.5rem;">Lifecycle</span>
+                            <span
+                                style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(27, 42, 74, 0.8);">Lifecycle
+                                Support</span>
+                        </div>
+                        <div
+                            style="background: #ffffff; padding: 1.5rem; border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 12px; display: flex; flex-direction: column; justify-content: center; transition: transform 0.3s ease;">
+                            <span
+                                style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--primary-color); display: block; line-height: 1; margin-bottom: 0.5rem;">Tier-1</span>
+                            <span
+                                style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7280;">Global
+                                Partners</span>
+                        </div>
+                        <div
+                            style="background: #ffffff; padding: 1.5rem; border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 12px; display: flex; flex-direction: column; justify-content: center; transition: transform 0.3s ease;">
+                            <span
+                                style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--primary-color); display: block; line-height: 1; margin-bottom: 0.5rem;">24/7</span>
+                            <span
+                                style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7280;">Service
+                                Response</span>
+                        </div>
+                    </div>
+
+                    <ul class="ind-feature-list" style="color: var(--text-dark); margin-bottom: 2.5rem;">
+                        <li style="color: var(--text-dark);">Construction machinery supply and fleet support</li>
+                        <li style="color: var(--text-dark);">Critical spare parts sourcing and logistics</li>
+                        <li style="color: var(--text-dark);">Subcontractor and specialized vendor identification</li>
+                        <li style="color: var(--text-dark);">Project-specific regulatory & statutory compliance</li>
+                    </ul>
+
+                    <div class="about-cta" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn btn-primary"
+                            style="padding: 15px 40px; display: inline-block; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; background: var(--primary-color); color: white; text-decoration: none; border-radius: 4px;">Inquire
+                            Now <i class="fas fa-arrow-right" style="margin-left: 0.8rem;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual-side">
+                <div class="about-image-wrapper">
+                    <img src="images/ind_infrastructure.png" alt="Infrastructure" class="about-premium-img">
+                    <div class="about-experience-badge" style="right: auto; left: -30px; border-radius: 50% 50% 0 50%;">
+                        <span class="badge-number">10+</span>
+                        <span class="badge-text">Years of Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="industries-detail-section">
+        <div class="container">
+
+            <!-- 02 K-Beauty -->
+            <div class="ind-item-row reveal">
+                <div class="ind-item-text">
+                    <span class="section-label">Industry Sector 02</span>
+                    <h2>Cosmetics — <em>K-Beauty</em></h2>
+                    <p>Bridging the gap between South Korean innovation and Indian retail. Through our vertical
+                        <strong>Loche India</strong>, we are the exclusive authorised wholesaler for premium brands via
+                        <em>bellaluna.in</em>.
+                    </p>
+                    <ul class="ind-feature-list">
+                        <li>Exclusive distribution: GLOSSYS, BREIL, CUREST</li>
+                        <li>B2B onboarding for retail chains, salons, and spas</li>
+                        <li>Complete CDSCO and BIS import compliance management</li>
+                        <li>Digital marketing and brand localization strategies</li>
+                    </ul>
+                </div>
+                <div class="ind-item-visual">
+                    <span class="vertical-badge">Premium Vertical</span>
+                    <div class="visual-accent accent-bottom-left"></div>
+                    <div class="ind-img-wrapper">
+                        <img src="images/k_beauty_cosmetics.png" alt="K-Beauty">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 03 Medical -->
+            <div class="ind-item-row reveal">
+                <div class="ind-item-text">
+                    <span class="section-label">Industry Sector 03</span>
+                    <h2>Medical Implants — <em>Dental</em></h2>
+                    <p>Advancing healthcare precision in India. We represent global leaders like <strong>SG
+                            Implant</strong> (South Korea), delivering advanced implant solutions to medical
+                        professionals nationwide.</p>
+                    <ul class="ind-feature-list">
+                        <li>Authorised distribution of precision SG Implant systems</li>
+                        <li>Medical Device registration and statutory compliance</li>
+                        <li>Network development for clinics and hospitals</li>
+                        <li>Specialized clinical training and technical support</li>
+                    </ul>
+                </div>
+                <div class="ind-item-visual">
+                    <span class="vertical-badge">Healthcare</span>
+                    <div class="visual-accent accent-top-right"></div>
+                    <div class="ind-img-wrapper">
+                        <img src="images/ind_dental_implants.png" alt="Medical Implants">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 04 Heavy Equipment -->
+            <div class="ind-item-row reveal">
+                <div class="ind-item-text">
+                    <span class="section-label">Industry Sector 04</span>
+                    <h2>Heavy Equipment & <em>Engineering</em></h2>
+                    <p>Empowering the engineering sector with global technology. We provide a structured route-to-market
+                        and operational platform for international OEMs in the Indian market.</p>
+                    <ul class="ind-feature-list">
+                        <li>Authorised brand representation and market expansion</li>
+                        <li>National dealer and service network establishment</li>
+                        <li>Strategic spare parts inventory management</li>
+                        <li>Technical operator training and safety certification</li>
+                    </ul>
+                </div>
+                <div class="ind-item-visual">
+                    <div class="visual-accent accent-bottom-left"></div>
+                    <div class="ind-img-wrapper">
+                        <img src="images/ind_heavy_equipment.png" alt="Heavy Equipment">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 05 Food & Agro -->
+            <div class="ind-item-row reveal">
+                <div class="ind-item-text">
+                    <span class="section-label">Industry Sector 05</span>
+                    <h2>Food & Agro <em>Products</em></h2>
+                    <p>Securing India's food supply chain. We facilitate high-volume trade in agro-commodities, ensuring
+                        quality, compliance, and efficiency from source to distribution.</p>
+                    <ul class="ind-feature-list">
+                        <li>Trade in raw, processed, and frozen food products</li>
+                        <li>Strict FSSAI compliance and quality assurance</li>
+                        <li>Optimized cold chain and perishable logistics</li>
+                        <li>Documentation support for international trade</li>
+                    </ul>
+                </div>
+                <div class="ind-item-visual">
+                    <div class="visual-accent accent-top-right"></div>
+                    <div class="ind-img-wrapper">
+                        <img src="images/ind_agro_food.png" alt="Food & Agro">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 06 Industrial Scrap -->
+            <div class="ind-item-row reveal">
+                <div class="ind-item-text">
+                    <span class="section-label">Industry Sector 06</span>
+                    <h2>Refurbishing & <em>Industrial Scrap</em></h2>
+                    <p>Driving the circular economy in manufacturing. We manage the sourcing and trade of high-grade
+                        industrial scrap, providing secondary raw materials to the metal and alloy industries.</p>
+                    <ul class="ind-feature-list">
+                        <li>Sourcing for ferrous and non-ferrous scrap materials</li>
+                        <li>Laboratory quality grading and certification</li>
+                        <li>Environmental and pollution control compliance</li>
+                        <li>International logistics and customs facilitation</li>
+                    </ul>
+                </div>
+                <div class="ind-item-visual">
+                    <div class="visual-accent accent-bottom-left"></div>
+                    <div class="ind-img-wrapper">
+                        <img src="images/ind_industrial_scrap.png" alt="Industrial Scrap">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 07 Commercial Real Estate -->
+            <div class="ind-item-row reveal">
+                <div class="ind-item-text">
+                    <span class="section-label">Industry Sector 07</span>
+                    <h2>Commercial <em>Real Estate</em></h2>
+                    <p>Strategic property solutions for global enterprises. We provide end-to-end support for industrial
+                        and commercial property acquisition across India's growth corridors.</p>
+                    <ul class="ind-feature-list">
+                        <li>Industrial land and factory premises procurement</li>
+                        <li>Showroom and prime commercial space identification</li>
+                        <li>Legal due diligence, title search, and verification</li>
+                        <li>Liaisoning with government for permits and land use</li>
+                    </ul>
+                </div>
+                <div class="ind-item-visual">
+                    <div class="visual-accent accent-top-right"></div>
+                    <div class="ind-img-wrapper">
+                        <img src="images/ind_commercial_real_estate.png" alt="Real Estate">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us Component -->
+            <div class="why-choose-us-industries reveal" style="margin: 10rem 0 4rem;">
+                <div class="section-header text-center" style="margin-bottom: 5rem;">
+                    <span class="section-label">Our Advantage</span>
+                    <h2 style="font-size: 3rem; color: var(--white); margin-bottom: 1.5rem;">What Sets Exigencies
+                        Mercantile <em>Apart</em></h2>
+                    <p style="color: rgba(255,255,255,0.6); max-width: 800px; margin: 0 auto;">In a market as complex
+                        and dynamic as India, the quality of your local partner determines the quality of your outcomes.
+                        We offer a combination of capabilities, values, and experience that is genuinely differentiated.
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem;">
+                    <!-- Advantage 01 -->
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; border-radius: 20px; transition: all 0.4s ease;"
+                        onmouseover="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--gold)'"
+                        onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'">
+                        <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 2rem;"><i
+                                class="fas fa-network-wired"></i></div>
+                        <h4 style="font-size: 1.4rem; color: var(--white); margin-bottom: 1.5rem; font-weight: 600;">
+                            Single-Window Strategic Partner</h4>
+                        <p style="color: rgba(255,255,255,0.6); line-height: 1.7; font-size: 1rem;">India's business
+                            environment involves multiple stakeholders, authorities, and regulatory frameworks. We
+                            consolidate this complexity into a single, accountable partnership — providing integrated
+                            market-entry, representation, trading, compliance, and industrial solutions under one
+                            platform.</p>
+                    </div>
+
+                    <!-- Advantage 02 -->
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; border-radius: 20px; transition: all 0.4s ease;"
+                        onmouseover="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--gold)'"
+                        onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'">
+                        <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 2rem;"><i
+                                class="fas fa-shield-halved"></i></div>
+                        <h4 style="font-size: 1.4rem; color: var(--white); margin-bottom: 1.5rem; font-weight: 600;">
+                            Compliance-Driven Operations</h4>
+                        <p style="color: rgba(255,255,255,0.6); line-height: 1.7; font-size: 1rem;">Regulatory
+                            non-compliance is the single greatest risk in India. We have built compliance into the DNA
+                            of our operations. From GST and import regulations to CDSCO medical device approvals and
+                            FSSAI compliance, every engagement is fully aligned with all applicable statutory
+                            requirements.</p>
+                    </div>
+
+                    <!-- Advantage 03 -->
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; border-radius: 20px; transition: all 0.4s ease;"
+                        onmouseover="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--gold)'"
+                        onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'">
+                        <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 2rem;"><i
+                                class="fas fa-globe-asia"></i></div>
+                        <h4 style="font-size: 1.4rem; color: var(--white); margin-bottom: 1.5rem; font-weight: 600;">
+                            Local Intelligence, Global Standards</h4>
+                        <p style="color: rgba(255,255,255,0.6); line-height: 1.7; font-size: 1rem;">Effective market
+                            entry requires deep local intelligence — regional dynamics, regulatory nuances, and cultural
+                            considerations. We combine on-the-ground expertise with internationally recognised business
+                            governance standards, ensuring you benefit from local know-how without sacrificing rigour.
+                        </p>
+                    </div>
+
+                    <!-- Advantage 04 -->
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; border-radius: 20px; transition: all 0.4s ease;"
+                        onmouseover="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--gold)'"
+                        onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'">
+                        <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 2rem;"><i
+                                class="fas fa-gears"></i></div>
+                        <h4 style="font-size: 1.4rem; color: var(--white); margin-bottom: 1.5rem; font-weight: 600;">
+                            Structured Execution Model</h4>
+                        <p style="color: rgba(255,255,255,0.6); line-height: 1.7; font-size: 1rem;">We operate through a
+                            defined, phased engagement model — from initial assessment through strategy, setup, launch,
+                            and scale. Roles are clearly defined, timelines are established, and progress is tracked
+                            against measurable milestones, ensuring full visibility and accountability.</p>
+                    </div>
+
+                    <!-- Advantage 05 -->
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; border-radius: 20px; transition: all 0.4s ease;"
+                        onmouseover="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--gold)'"
+                        onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'">
+                        <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 2rem;"><i
+                                class="fas fa-handshake"></i></div>
+                        <h4 style="font-size: 1.4rem; color: var(--white); margin-bottom: 1.5rem; font-weight: 600;">
+                            Strong Distribution Network</h4>
+                        <p style="color: rgba(255,255,255,0.6); line-height: 1.7; font-size: 1rem;">We maintain
+                            established relationships with a broad network of suppliers, distributors, logistics
+                            providers, and regulatory consultants across India. This network enables faster execution,
+                            competitive sourcing, and better outcomes — advantages that would take years to build
+                            independently.</p>
+                    </div>
+
+                    <!-- Advantage 06 -->
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; border-radius: 20px; transition: all 0.4s ease;"
+                        onmouseover="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--gold)'"
+                        onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'">
+                        <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 2rem;"><i
+                                class="fas fa-chart-line"></i></div>
+                        <h4 style="font-size: 1.4rem; color: var(--white); margin-bottom: 1.5rem; font-weight: 600;">
+                            Long-Term Partnership Mindset</h4>
+                        <p style="color: rgba(255,255,255,0.6); line-height: 1.7; font-size: 1rem;">Our model and
+                            culture are aligned around long-term value creation. We invest deeply in understanding your
+                            business, align our objectives with your strategic goals, and build engagements designed to
+                            scale sustainably. Our success is measured by your growth.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Promise Strip -->
+            <div class="promise-strip-modern reveal"
+                style="margin: 8rem 0; background: linear-gradient(135deg, var(--gold) 0%, #b89640 100%); padding: 6rem 2rem; border-radius: 40px; text-align: center; color: var(--navy); box-shadow: 0 40px 80px rgba(0,0,0,0.2);">
+                <h2
+                    style="font-family: var(--font-heading); font-size: 2.8rem; margin-bottom: 2.5rem; font-weight: 600; line-height: 1.2;">
+                    We <em>protect</em> your brand. We <em>build</em> your market.<br>We <em>deliver</em> your growth.
+                </h2>
+                <a href="contact.html" class="btn btn-primary"
+                    style="background: var(--navy); color: var(--gold); padding: 20px 60px; border-radius: 60px; font-weight: 800; border: none; font-size: 1.1rem; box-shadow: 0 15px 35px rgba(0,0,0,0.3); text-decoration: none; display: inline-block;">Start
+                    a Strategic Partnership</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

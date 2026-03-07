@@ -14,6 +14,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
@@ -28,6 +29,10 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-bg-pattern"></div>
+        <div class="hero-mesh-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
         <div class="hero-grid"></div>
         <svg class="hero-compass-bg" viewBox="0 0 700 700" fill="none">
             <circle cx="350" cy="350" r="340" stroke="#c9a84c" stroke-width="1" />
@@ -48,22 +53,21 @@
                 <div class="hero-eyebrow-line"></div>
                 <span>Your Strategic Gateway to the Indian Market</span>
             </div>
-            <h1>Navigate<br>Global Markets<br>with <em>Precision</em></h1>
-            <p class="hero-desc">We represent international businesses entering India — providing market intelligence,
-                regulatory guidance, distribution strategy, and on-ground execution.</p>
+            <h1>Exigencies<br>Mercantile<br><em>India</em> Pvt. Ltd.</h1>
+            <p class="hero-desc">Strategy · Supply · Strength</p>
             <div class="hero-actions">
-                <a href="#contact" class="btn-primary-hero">Explore Partnership</a>
-                <a href="#services" class="btn-secondary"><span>↓</span> Our Services</a>
+                <a href="services.html" class="btn-primary-hero">Explore Services</a>
+                <a href="#contact" class="btn-primary-hero btn-hero-alt">Partner With Us</a>
             </div>
         </div>
 
         <div class="hero-stats">
             <div class="stat-item">
-                <div class="stat-num">10<span>+</span></div>
+                <div class="stat-num">30<span>+</span></div>
                 <div class="stat-label">Years Experience</div>
             </div>
             <div class="stat-item">
-                <div class="stat-num">40<span>+</span></div>
+                <div class="stat-num">10<span>+</span></div>
                 <div class="stat-label">Global Clients</div>
             </div>
             <div class="stat-item">
@@ -102,32 +106,60 @@
     <section class="about" id="about">
         <div class="container about-grid-container">
             <div class="about-content-side">
-                <h3 class="subsection-tagline">About Us</h3>
-                <h2 class="section-title" style="text-align: left; margin: 0 0 1.5rem 0;">Excellence in Strategic
-                    Mercantile Solutions</h2>
+                <h3 class="subsection-tagline">Who We Are</h3>
+                <h2 class="section-title"
+                    style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.6rem; line-height: 1.15;">Built to
+                    Bridge <em>Global Ambition</em><br>with Indian Execution
+                </h2>
                 <div class="about-main-text">
-                    <p>Exigencies Mercantile India Private Limited is a diversified mercantile and strategic solutions
-                        company supporting brands, OEMs, and enterprises with representation, trading, and industrial
-                        services across India.</p>
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.2rem;">
+                        Exigencies Mercantile India Private Limited is a diversified mercantile and strategic business
+                        solutions company committed to enabling global and domestic enterprises to successfully enter,
+                        operate, and expand within the Indian market.</p>
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 2rem;">We
+                        specialise in brand and OEM representation, general trading, industrial and construction
+                        solutions, scrap trading, land acquisition & investment, liaisoning & representation, and
+                        authorised channel partnership services — delivering integrated, single-window support to our
+                        partners across India.</p>
 
-                    <div class="about-features">
-                        <div class="about-feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Market Entry Strategy & Compliance</span>
+                    <div
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 2.5rem; margin-bottom: 2.5rem;">
+                        <div
+                            style="background: var(--primary-color); padding: 1.8rem; border-radius: 12px; box-shadow: 0 15px 35px rgba(27, 42, 74, 0.1); display: flex; flex-direction: column; justify-content: center; transition: transform 0.3s ease;">
+                            <span
+                                style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 700; color: var(--accent-gold); display: block; line-height: 1; margin-bottom: 0.5rem;">7</span>
+                            <span
+                                style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255, 255, 255, 0.8);">Service
+                                Verticals</span>
                         </div>
-                        <div class="about-feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>General Trading & Industrial Solutions</span>
+                        <div
+                            style="background: var(--accent-gold); padding: 1.8rem; border-radius: 12px; box-shadow: 0 15px 35px rgba(201, 168, 76, 0.2); display: flex; flex-direction: column; justify-content: center; transition: transform 0.3s ease;">
+                            <span
+                                style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 700; color: var(--primary-color); display: block; line-height: 1; margin-bottom: 0.5rem;">100%</span>
+                            <span
+                                style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(27, 42, 74, 0.8);">Compliance
+                                First</span>
                         </div>
-                        <div class="about-feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>OEM Representation & Liaisoning</span>
+                        <div
+                            style="background: #ffffff; padding: 1.8rem; border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03); display: flex; flex-direction: column; justify-content: center; transition: transform 0.3s ease;">
+                            <span
+                                style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--primary-color); display: block; line-height: 1; margin-bottom: 0.5rem;">Pan-India</span>
+                            <span
+                                style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7280;">Market
+                                Reach</span>
+                        </div>
+                        <div
+                            style="background: #ffffff; padding: 1.8rem; border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03); display: flex; flex-direction: column; justify-content: center; transition: transform 0.3s ease;">
+                            <span
+                                style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--primary-color); display: block; line-height: 1; margin-bottom: 0.5rem;">OEM</span>
+                            <span
+                                style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7280;">Specialists</span>
                         </div>
                     </div>
 
-                    <div class="about-cta" style="margin-top: 3rem;">
-                        <a href="about.html" class="btn btn-outline"
-                            style="border-color: var(--primary-color); color: var(--primary-color); padding: 15px 40px; display: inline-block; font-weight: 600;">Explore
+                    <div class="about-cta" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="about.html" class="btn btn-primary"
+                            style="padding: 15px 40px; display: inline-block; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem;">Explore
                             Our Story <i class="fas fa-arrow-right" style="margin-left: 0.8rem;"></i></a>
                     </div>
                 </div>
@@ -144,483 +176,398 @@
         </div>
     </section>
 
-    <!-- Chairman's Message Section (Full Width) -->
-
-    <section class="chairman-section" id="chairman-message">
+    <!-- CHAIRMAN / FOUNDER'S MESSAGE SECTION -->
+    <!-- <section class="chairman-message-section" id="chairman-message">
         <div class="container">
-            <div class="chairman-wrapper">
-                <div class="chairman-visual">
-                    <img src="images/billy-kim-1-898x1024.jpg" alt="Chairman, Exigencies Mercantile India"
-                        class="chairman-img">
-                    <div class="visual-quote-overlay">
-                        <i class="fas fa-quote-right"></i>
+            <div class="message-grid">
+                <div class="message-visual-side reveal-left">
+                    <div class="chairman-img-wrapper">
+                        <img src="images/billy-kim-1-898x1024.jpg" alt="Chairman & Founder" class="chairman-img">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="chairman-content">
-                    <h3 class="subsection-tagline">Chairman / Founder’s Message</h3>
-
-                    <p class="chairman-intro">"At Exigencies Mercantile India Private
-                        Limited, our journey is guided by a simple yet powerful belief — true leadership is built on
-                        trust, discipline, and the consistent delivery of results."</p>
-
-                    <blockquote>
-                        India today stands at a historic inflection point. It is rapidly emerging as a global
-                        manufacturing hub, an infrastructure powerhouse, and a high-growth consumption market. For
-                        international OEMs, India presents exceptional opportunity. However, realizing this
-                        potential requires more than market access. It requires a partner who understands the landscape,
-                        navigates complexity, ensures compliance, and executes with precision.
-                    </blockquote>
-
-
-
-                    <div class="chairman-cta" style="margin-top: 2rem;">
-                        <button id="chairman-read-more-btn" class="btn btn-outline">Read
-                            Chairman's Message <i class="fas fa-arrow-right-long"
-                                style="margin-left: 0.5rem;"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Redesigned Chairman's Message Section (Modern & Text-Only) -->
-    <!-- <section class="chairman-section-refined" id="chairman-message-refined">
-        <div class="container">
-            <div class="chairman-refined-content reveal">
-                <h3 class="subsection-tagline text-center">Chairman / Founder’s Message</h3>
-
-                <div class="message-quote-box">
-                    <i class="fas fa-quote-left message-quote-icon"></i>
-                    <p class="message-highlight-text">
+                <div class="message-content-side reveal-right">
+                    <h3 class="chairman-section-tagline">CHAIRMAN / FOUNDER’S MESSAGE</h3>
+                    <p class="message-highlight">
                         "At Exigencies Mercantile India Private Limited, our journey is guided by a simple yet powerful
                         belief — true leadership is built on trust, discipline, and the consistent delivery of results."
                     </p>
-                </div>
-
-                <div class="message-body-text">
-                    <p>India today stands at a historic inflection point. It is rapidly emerging as a global
+                    <div class="message-blockquote">
+                        India today stands at a historic inflection point. It is rapidly emerging as a global
                         manufacturing hub, an infrastructure powerhouse, and a high-growth consumption market. For
                         international OEMs, India presents exceptional opportunity. However, realizing this potential
                         requires more than market access. It requires a partner who understands the landscape, navigates
-                        complexity, ensures compliance, and executes with precision.</p>
-                </div>
-
-                <div class="message-footer-cta text-center">
-                    <button id="chairman-read-more-btn" class="btn btn-primary">
-                        Read Chairman's Message <i class="fas fa-arrow-right" style="margin-left: 0.8rem;"></i>
-                    </button>
+                        complexity, ensures compliance, and executes with precision.
+                    </div>
+                    <div class="message-cta-wrapper">
+                        <button id="chairman-read-more-btn-2" class="btn-read-more">
+                            Read Chairman's Message <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </section> -->
 
-    <!-- Mission & Vision Section -->
-    <section class="mission-section">
-        <div class="container">
 
-            <div class="section-header text-center" style="margin-bottom: 4rem;">
-                <h3 class="subsection-tagline" style="margin-bottom: 1rem;">Purpose & Values</h3>
-                <h2 class="section-title" style="margin-bottom: 0;">Driving Success through Vision</h2>
+    <!-- OUR CORE VERTICALS -->
+    <section class="verticals-section" id="verticals">
+        <div class="container">
+            <div class="section-header text-center">
+                <h3 class="subsection-tagline">Our Core Verticals</h3>
+                <h2 class="section-title">Diverse Strategic Expertise</h2>
+                <p class="section-subtitle">Comprehensive solutions across multiple sectors to enable global business
+                    success in India.</p>
             </div>
 
-            <div class="mission-vision-grid">
-                <div class="mv-card mission-card reveal">
-                    <div class="mv-icon-wrapper">
-                        <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
-                    </div>
-                    <h3>Our Mission</h3>
-                    <p>To empower international OEMs and global enterprises with structured market-entry,
-                        representation, trading, and industrial solutions in India through compliance-driven execution,
-                        strategic foresight, and operational excellence.</p>
-                </div>
-                <div class="mv-card vision-card reveal">
-                    <div class="mv-icon-wrapper">
-                        <div class="mv-icon"><i class="fas fa-eye"></i></div>
-                    </div>
-                    <h3>Our Vision</h3>
-                    <p>To become India’s most trusted strategic mercantile partner for international enterprises —
-                        recognized for integrity, execution strength, and our ability to transform global ambitions into
-                        successful Indian operations.</p>
-                </div>
-                <div class="mv-card values-card reveal">
-                    <div class="mv-icon-wrapper">
-                        <div class="mv-icon"><i class="fas fa-gem"></i></div>
-                    </div>
-                    <h3>Core Values</h3>
-                    <p>Our foundation is built on <strong>Integrity</strong>, <strong>Transparency</strong>, and a
-                        <strong>Disciplined Approach</strong>. We value long-term partnerships over short-term gains,
-                        ensuring sustainable value for every stakeholder we serve.
+            <div class="verticals-grid">
+                <div class="vertical-card reveal">
+                    <div class="vertical-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Brand & OEM Representation</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">Structured market-entry
+                        and full commercial representation for global brands seeking a foothold in the Indian market.
                     </p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">Strategy. Supply. Strength. Integrated solutions for your business.</p>
-            </div>
-
-            <div class="services-carousel-wrapper">
-                <div class="swiper services-swiper">
-                    <div class="swiper-wrapper">
-                        <!-- Service 1 -->
-                        <div class="swiper-slide">
-                            <div class="service-card reveal">
-                                <div class="service-number">01</div>
-                                <div class="service-icon"><i class="fas fa-hard-hat"></i></div>
-                                <h3>Infrastructure & Construction</h3>
-                                <p>Supporting large-scale infrastructure development through construction machinery
-                                    supply,
-                                    spare
-                                    parts, maintenance, rebuilding services, and project support.</p>
-                                <a href="#contact" class="service-link">Learn More <i
-                                        class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-
-                        <!-- Service 2 -->
-                        <div class="swiper-slide">
-                            <div class="service-card reveal">
-                                <div class="service-number">02</div>
-                                <div class="service-icon"><i class="fas fa-industry"></i></div>
-                                <h3>Manufacturing & Industrial Production</h3>
-                                <p>Enabling global manufacturers and OEMs to establish and expand operations in India
-                                    through
-                                    representation, compliance management, channel development, and industrial sourcing.
-                                </p>
-                                <a href="#contact" class="service-link">Learn More <i
-                                        class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-
-                        <!-- Service 3 -->
-                        <div class="swiper-slide">
-                            <div class="service-card reveal">
-                                <div class="service-number">03</div>
-                                <div class="service-icon"><i class="fas fa-cogs"></i></div>
-                                <h3>Heavy Equipment & Engineering</h3>
-                                <p>Providing market development, lifecycle maintenance solutions, spare parts
-                                    distribution,
-                                    and
-                                    strategic partnerships for heavy machinery and engineering products.</p>
-                                <a href="#contact" class="service-link">Learn More <i
-                                        class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-
-                        <!-- Service 4 -->
-                        <div class="swiper-slide">
-                            <div class="service-card reveal">
-                                <div class="service-number">04</div>
-                                <div class="service-icon"><i class="fas fa-utensils"></i></div>
-                                <h3>Food & Agro Products</h3>
-                                <p>Trading and distribution of raw, unprocessed, processed, and frozen food products
-                                    with
-                                    quality
-                                    control, regulatory compliance, and reliable supply chain management.</p>
-                                <a href="#contact" class="service-link">Learn More <i
-                                        class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-
-                        <!-- Service 5 -->
-                        <div class="swiper-slide">
-                            <div class="service-card reveal">
-                                <div class="service-number">05</div>
-                                <div class="service-icon"><i class="fas fa-recycle"></i></div>
-                                <h3>Refurbishing & Industrial Scrap</h3>
-                                <p>Sourcing and trading of ferrous and non-ferrous scrap materials, supporting
-                                    sustainable
-                                    industrial recycling and responsible material recovery.</p>
-                                <a href="#contact" class="service-link">Learn More <i
-                                        class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-
-                        <!-- Service 6 -->
-                        <div class="swiper-slide">
-                            <div class="service-card reveal">
-                                <div class="service-number">06</div>
-                                <div class="service-icon"><i class="fas fa-building"></i></div>
-                                <h3>Commercial Real Estate & Investment</h3>
-                                <p>Facilitating land acquisition, showroom development, commercial property investment,
-                                    and
-                                    project
-                                    advisory services for industrial and retail expansion.</p>
-                                <a href="#contact" class="service-link">Learn More <i
-                                        class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Pagination -->
-                    <div class="swiper-pagination services-pagination"></div>
+                <div class="vertical-card reveal">
+                    <div class="vertical-icon"><i class="fas fa-users-cog"></i></div>
+                    <h3>Authorised Channel Partner</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">We operate as an exclusive
+                        B2B partner and authorised representative for leading global brands.</p>
                 </div>
-
-                <!-- Navigation Buttons -->
-                <div class="services-nav">
-                    <div class="swiper-button-prev services-prev"><i class="fas fa-chevron-left"></i></div>
-                    <div class="swiper-button-next services-next"><i class="fas fa-chevron-right"></i></div>
+                <div class="vertical-card reveal">
+                    <div class="vertical-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Heavy Equipment & Engineering</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">Providing market
+                        development, lifecycle maintenance solutions, and strategic partnerships for heavy machinery.
+                    </p>
+                </div>
+                <div class="vertical-card reveal">
+                    <div class="vertical-icon"><i class="fas fa-wheat-awn"></i></div>
+                    <h3>Food & Agro Products</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">Trading and distribution
+                        of raw, unprocessed, processed, and frozen food products with quality control.</p>
+                </div>
+                <div class="vertical-card reveal">
+                    <div class="vertical-icon"><i class="fas fa-recycle"></i></div>
+                    <h3>Refurbishing & Industrial Scrap</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">Sourcing and trading of
+                        ferrous and non-ferrous scrap materials, supporting sustainable industrial recycling.</p>
+                </div>
+                <div class="vertical-card reveal">
+                    <div class="vertical-icon"><i class="fas fa-building"></i></div>
+                    <h3>Commercial Real Estate & Investment</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">Facilitating land
+                        acquisition, showroom development, and project advisory for industrial expansion.</p>
+                </div>
+                <div class="vertical-card reveal">
+                    <div class="vertical-icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Research & Development</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">Product feasibility
+                        studies, market research, and regulatory documentation preparation.</p>
+                </div>
+                <div class="vertical-card reveal">
+                    <div class="vertical-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Marketing Strategies</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">Designing and executing
+                        structured marketing strategies (Online & Offline) for represented brands.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="why-choose-us" id="why-choose-us">
-
+    <!-- AUTHORISED CHANNEL PARTNER SECTION -->
+    <section class="featured-partner-section">
         <div class="container">
-            <div class="text-center" style="margin-bottom: 3rem;">
-                <h2 class="section-title">Why Choose Us</h2>
-                <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
-                    At Exigencies Mercantile India Private Limited, we combine strategic insight, regulatory discipline,
-                    and
-                    execution capability to deliver dependable outcomes for global enterprises operating in India.</p>
-            </div>
+            <div class="partner-card">
+                <div class="partner-visual">
+                    <div class="logo-space">
+                        <img src="images/loche.png" alt="Loche India Logo" class="loche-logo">
+                        <div class="exclusive-badge">Exclusive B2B Partner</div>
+                    </div>
+                </div>
+                <div class="partner-info">
+                    <h3 class="subsection-tagline">Authorised Channel Partner</h3>
+                    <h2>Loche India</h2>
+                    <p class="partner-desc">Authorised Representative and Wholesaler in India for:</p>
 
-            <div class="features-grid">
-                <div class="feature-item">
-                    <i class="fas fa-check-circle feature-icon"></i>
-                    <h4>Single-Window Strategic Partner</h4>
-                    <p>We provide integrated market-entry, representation, trading, and industrial solutions under one
-                        platform, reducing complexity and accelerating execution.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-shield-alt feature-icon"></i>
-                    <h4>Compliance-Driven Operations</h4>
-                    <p>We prioritize legal, regulatory, and statutory compliance in every engagement, ensuring
-                        risk-managed and sustainable business operations.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-globe-asia feature-icon"></i>
-                    <h4>Local Intelligence, Global Standards</h4>
-                    <p>We blend deep understanding of the Indian market with international business practices and
-                        governance standards.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-layer-group feature-icon"></i>
-                    <h4>Structured Execution Model</h4>
-                    <p>Our phased engagement approach ensures clarity, accountability, and measurable progress from
-                        assessment to scale.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-network-wired feature-icon"></i>
-                    <h4>Strong Partner & Distribution Network</h4>
-                    <p>We maintain established relationships with suppliers, distributors, consultants, and industry
-                        stakeholders across India.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-chart-line feature-icon"></i>
-                    <h4>Long-Term Partnership Mindset</h4>
-                    <p>We focus on building enduring relationships, not short-term transactions, aligning our success
-                        with your long-term growth.</p>
-                </div>
-            </div>
-
-            <div class="our-promise">
-                <h3>Our Promise</h3>
-                <div class="promise-items">
-                    <span>We protect your brand.</span>
-                    <span class="divider">•</span>
-                    <span>We build your market.</span>
-                    <span class="divider">•</span>
-                    <span>We deliver your growth.</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Business Model / How We Work -->
-    <section class="business-model" id="business-model">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Business Model / How We Work</h2>
-                <p class="section-subtitle">At Exigencies Mercantile India Private Limited, we follow a structured,
-                    phased business model that ensures clarity, compliance, and consistent execution from market entry
-                    to scale.</p>
-            </div>
-
-            <!-- Carousel Container -->
-            <div class="carousel-wrapper">
-                <div class="carousel-track-container">
-                    <ul class="carousel-track">
-                        <!-- Phase 1 -->
-                        <li class="carousel-card current-slide">
-                            <span class="phase-badge">Phase 01</span>
-                            <h3>Understand & Assess</h3>
-                            <p class="phase-desc">We begin by deep-diving into your product and market landscape.</p>
-                            <ul class="phase-list">
-                                <li>Product and market understanding</li>
-                                <li>Industry and competitor analysis</li>
-                                <li>Regulatory and compliance mapping</li>
-                                <li>Feasibility assessment</li>
-                            </ul>
-                            <div class="outcome-box">
-                                <i class="fas fa-check-circle"></i>
-                                <span><strong>Outcome:</strong> Defined roadmap</span>
+                    <div class="partner-sub-grid">
+                        <div class="sub-category">
+                            <h4><i class="fas fa-stethoscope"></i> Medical Implant Brands</h4>
+                            <p>Direct representation for global dental and medical implant systems.</p>
+                        </div>
+                        <div class="sub-category">
+                            <h4><i class="fas fa-sparkles"></i> K-Beauty Skin Care Brands</h4>
+                            <div class="brand-tags">
+                                <span>GLOSSYS</span>
+                                <span>BREIL</span>
+                                <span>CUREST</span>
+                                <span>& OTHERS</span>
                             </div>
-                        </li>
-
-                        <!-- Phase 2 -->
-                        <li class="carousel-card">
-                            <span class="phase-badge">Phase 02</span>
-                            <h3>Strategy & Structure</h3>
-                            <p class="phase-desc">Crafting the blueprint for your successful Indian entry.</p>
-                            <ul class="phase-list">
-                                <li>Market-entry strategy</li>
-                                <li>Commercial & pricing framework</li>
-                                <li>Channel & partner identification</li>
-                                <li>Localization plan</li>
-                            </ul>
-                            <div class="outcome-box">
-                                <i class="fas fa-check-circle"></i>
-                                <span><strong>Outcome:</strong> Go-to-market strategy</span>
-                            </div>
-                        </li>
-
-                        <!-- Phase 3 -->
-                        <li class="carousel-card">
-                            <span class="phase-badge">Phase 03</span>
-                            <h3>Setup & Compliance</h3>
-                            <p class="phase-desc">Establishing your legal and operational footprint.</p>
-                            <ul class="phase-list">
-                                <li>Company / branch setup</li>
-                                <li>Registrations & licenses</li>
-                                <li>IP & trademark support</li>
-                                <li>Infrastructure & HR planning</li>
-                            </ul>
-                            <div class="outcome-box">
-                                <i class="fas fa-check-circle"></i>
-                                <span><strong>Outcome:</strong> Ready-to-operate</span>
-                            </div>
-                        </li>
-
-                        <!-- Phase 4 -->
-                        <li class="carousel-card">
-                            <span class="phase-badge">Phase 04</span>
-                            <h3>Launch & Execute</h3>
-                            <p class="phase-desc">Going live and driving market penetration.</p>
-                            <ul class="phase-list">
-                                <li>Sales & marketing rollout</li>
-                                <li>Distributor onboarding</li>
-                                <li>Supply chain setup</li>
-                                <li>After-sales support</li>
-                            </ul>
-                            <div class="outcome-box">
-                                <i class="fas fa-check-circle"></i>
-                                <span><strong>Outcome:</strong> Active presence</span>
-                            </div>
-                        </li>
-
-                        <!-- Phase 5 -->
-                        <li class="carousel-card">
-                            <span class="phase-badge">Phase 05</span>
-                            <h3>Scale & Optimize</h3>
-                            <p class="phase-desc">Expanding reach and maximizing efficiency.</p>
-                            <ul class="phase-list">
-                                <li>Geographic expansion</li>
-                                <li>Manufacturing sourcing</li>
-                                <li>Performance monitoring</li>
-                                <li>Cost optimization</li>
-                            </ul>
-                            <div class="outcome-box">
-                                <i class="fas fa-check-circle"></i>
-                                <span><strong>Outcome:</strong> Sustainable growth</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Navigation Controls -->
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev-btn" aria-label="Previous Slide"><i
-                            class="fas fa-chevron-left"></i></button>
-
-                    <div class="carousel-dots-container">
-                        <!-- Dots will be generated by JS -->
+                        </div>
                     </div>
 
-                    <button class="carousel-btn next-btn" aria-label="Next Slide"><i
-                            class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-
-            <div class="engagement-principles">
-                <h3>Engagement Principles</h3>
-                <div class="principles-grid">
-                    <div class="principle-item">
-                        <i class="fas fa-user-shield principle-icon"></i>
-                        <span>Single-Window Accountability</span>
-                    </div>
-                    <div class="principle-item">
-                        <i class="fas fa-file-contract principle-icon"></i>
-                        <span>Compliance First</span>
-                    </div>
-                    <div class="principle-item">
-                        <i class="fas fa-comments principle-icon"></i>
-                        <span>Transparent Communication</span>
-                    </div>
-                    <div class="principle-item">
-                        <i class="fas fa-chart-line principle-icon"></i>
-                        <span>Performance Metrics</span>
+                    <div class="partner-cta">
+                        <p>For online orders and detailed brand information, please visit:</p>
+                        <a href="https://bellaluna.in/home" target="_blank" class="btn-partner"><span>Visit
+                                Bellealuna</span> <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Industries We Serve -->
-    <section class="industries" id="industries">
+    <!-- INDUSTRIES WE SERVE -->
+    <section id="industries" class="industries-section-refined">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Industries We Serve</h2>
-                <p class="section-subtitle">At Exigencies Mercantile India Private Limited, we support diverse
-                    industries through structured market-entry strategies, trading networks, industrial solutions, and
-                    strategic partnerships across India.</p>
+            <div class="section-header text-center">
+                <h3 class="subsection-tagline" style="color: var(--gold);">Industries We Serve</h3>
+                <h2 class="section-title">Eight Sectors Across<br>India's <em>Growth
+                        Economy</em></h2>
             </div>
-            <div class="industries-grid">
-                <div class="industry-card">
-                    <h4>Infrastructure & Construction</h4>
-                    <p>Supporting large-scale infrastructure development through construction machinery supply, spare
-                        parts, maintenance, rebuilding services, and project support.</p>
+
+            <div class="ind-grid reveal">
+                <div class="ind-card">
+                    <img class="ind-card-img" src="images/ind_infrastructure.png" alt="Infrastructure">
+                    <div class="ind-card-overlay">
+                        <div class="ind-card-num">01</div>
+                        <h3>Infrastructure & Construction</h3>
+                        <p class="ind-card-p">NIP-backed growth — machinery supply, maintenance, and project support</p>
+                    </div>
                 </div>
-                <div class="industry-card">
-                    <h4>Manufacturing & Industrial Production</h4>
-                    <p>Enabling global manufacturers and OEMs to establish and expand operations in India through
-                        representation, compliance management, channel development, and industrial sourcing.</p>
+                <div class="ind-card">
+                    <span class="ind-new-badge">NEW</span>
+                    <img class="ind-card-img" src="images/k_beauty_cosmetics.png" alt="K-Beauty">
+                    <div class="ind-card-overlay">
+                        <div class="ind-card-num">02</div>
+                        <h3>Cosmetics — K-Beauty</h3>
+                        <p class="ind-card-p">GLOSSYS · BREIL · CUREST — authorised South Korean skincare brands via
+                            bellaluna.in</p>
+                    </div>
                 </div>
-                <div class="industry-card">
-                    <h4>Heavy Equipment & Engineering</h4>
-                    <p>Providing market development, lifecycle maintenance solutions, spare parts distribution, and
-                        strategic partnerships for heavy machinery and engineering products.</p>
+                <div class="ind-card">
+                    <span class="ind-new-badge">NEW</span>
+                    <img class="ind-card-img" src="images/ind_dental_implants.png" alt="Medical">
+                    <div class="ind-card-overlay">
+                        <div class="ind-card-num">03</div>
+                        <h3>Medical Implants — Dental</h3>
+                        <p class="ind-card-p">SG Implant systems — CDSCO-compliant distribution across India's dental
+                            network</p>
+                    </div>
                 </div>
-                <div class="industry-card">
-                    <h4>Food & Agro Products</h4>
-                    <p>Trading and distribution of raw, unprocessed, processed, and frozen food products with quality
-                        control, regulatory compliance, and reliable supply chain management.</p>
-                </div>
-                <div class="industry-card">
-                    <h4>Industrial Recycling & Scrap</h4>
-                    <p>Sourcing and trading of ferrous and non-ferrous scrap materials, supporting sustainable
-                        industrial recycling and responsible material recovery.</p>
-                </div>
-                <div class="industry-card">
-                    <h4>Commercial Real Estate & Investment</h4>
-                    <p>Facilitating land acquisition, showroom development, commercial property investment, and project
-                        advisory services for industrial and retail expansion.</p>
+                <div class="ind-card">
+                    <img class="ind-card-img" src="images/ind_heavy_equipment.png" alt="Heavy Equipment">
+                    <div class="ind-card-overlay">
+                        <div class="ind-card-num">04</div>
+                        <h3>Heavy Equipment & Engineering</h3>
+                        <p class="ind-card-p">Market development, lifecycle maintenance, and spare parts distribution
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <div class="our-focus">
-                <h3>Our Focus</h3>
-                <p>We work with international OEMs, global brands, infrastructure companies, and industrial enterprises
-                    seeking structured entry and sustainable growth in India.</p>
+            <div class="ind-grid-2 reveal">
+                <div class="ind-card">
+                    <img class="ind-card-img" src="images/ind_agro_food.png" alt="Food">
+                    <div class="ind-card-overlay">
+                        <div class="ind-card-num">05</div>
+                        <h3>Food & Agro Products</h3>
+                        <p class="ind-card-p">FSSAI-compliant commodity trading — raw, processed, frozen food products
+                        </p>
+                    </div>
+                </div>
+                <div class="ind-card">
+                    <img class="ind-card-img" src="images/ind_industrial_scrap.png" alt="Scrap">
+                    <div class="ind-card-overlay">
+                        <div class="ind-card-num">06</div>
+                        <h3>Refurbishing & Industrial Scrap</h3>
+                        <p class="ind-card-p">Ferrous and non-ferrous scrap trading with environmental compliance</p>
+                    </div>
+                </div>
+                <div class="ind-card">
+                    <img class="ind-card-img" src="images/ind_commercial_real_estate.png" alt="Real Estate">
+                    <div class="ind-card-overlay">
+                        <div class="ind-card-num">07</div>
+                        <h3>Commercial Real Estate</h3>
+                        <p class="ind-card-p">Land acquisition, showroom and industrial property — end-to-end advisory
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-choose-us-refined" id="why-exigencies">
+        <div class="container">
+            <div class="section-header text-center">
+                <h3 class="subsection-tagline">Why Choose Us</h3>
+                <h2 class="section-title">Strategic Advantage</h2>
+            </div>
+
+            <div class="strategic-swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide refined-feature-card">
+                        <div class="feature-num">01</div>
+                        <h4>Single-Window Strategic Partner</h4>
+                    </div>
+                    <div class="swiper-slide refined-feature-card">
+                        <div class="feature-num">02</div>
+                        <h4>Compliance-Driven Execution</h4>
+                    </div>
+                    <div class="swiper-slide refined-feature-card">
+                        <div class="feature-num">03</div>
+                        <h4>India Market Intelligence</h4>
+                    </div>
+                    <div class="swiper-slide refined-feature-card">
+                        <div class="feature-num">04</div>
+                        <h4>Authorised Representation Capability</h4>
+                    </div>
+                    <div class="swiper-slide refined-feature-card">
+                        <div class="feature-num">05</div>
+                        <h4>Structured Execution Model</h4>
+                    </div>
+                    <div class="swiper-slide refined-feature-card">
+                        <div class="feature-num">06</div>
+                        <h4>Strong Partner & Distribution Network</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 4rem;">
+                <a href="why-choose-us.html" class="btn btn-secondary"
+                    style="border: 1px solid var(--gold); color: var(--gold); padding: 12px 30px; border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s ease;"
+                    onmouseover="this.style.background='var(--gold)'; this.style.color='var(--navy)'"
+                    onmouseout="this.style.background='transparent'; this.style.color='var(--gold)'">Learn more about
+                    our Strategic Advantage <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION, VISION & ENGAGEMENT MODEL -->
+    <section class="strategic-foundation">
+        <div class="container">
+            <div class="foundation-grid">
+                <!-- Mission -->
+                <div class="foundation-card reveal">
+                    <h3>Our Mission</h3>
+                    <p>To provide global
+                        enterprises with a single-window, transparent, and compliance-driven strategy to establish and
+                        scale their operations within the Indian subcontinent.</p>
+                </div>
+                <!-- Vision -->
+                <div class="foundation-card reveal">
+                    <h3>Our Vision</h3>
+                    <p>To be the most trusted
+                        and structured strategic mercantile partner in India, known for bridging the gap between global
+                        opportunity and local execution.</p>
+                </div>
+            </div>
+
+            <!-- Engagement Model Roadmap -->
+            <div class="engagement-roadmap reveal">
+                <div class="section-header text-center">
+                    <h3 class="subsection-tagline">Our Engagement Model</h3>
+                    <h2 class="section-title">Five Phases to <em>Sustainable Growth</em></h2>
+                </div>
+
+                <div class="roadmap-timeline">
+                    <!-- Phase 1 -->
+                    <div class="roadmap-phase reveal">
+                        <div class="phase-circle">01</div>
+                        <h4>Understand & Assess</h4>
+                        <p>Market analysis, competitive mapping, and feasibility study.</p>
+                        <div class="phase-outcome-tag">Market roadmap</div>
+                    </div>
+                    <!-- Phase 2 -->
+                    <div class="roadmap-phase reveal" style="transition-delay: 0.1s;">
+                        <div class="phase-circle">02</div>
+                        <h4>Strategy & Structure</h4>
+                        <p>GTM strategy, channel design, and partner identification.</p>
+                        <div class="phase-outcome-tag">Approved strategy</div>
+                    </div>
+                    <!-- Phase 3 -->
+                    <div class="roadmap-phase reveal" style="transition-delay: 0.2s;">
+                        <div class="phase-circle">03</div>
+                        <h4>Setup & Compliance</h4>
+                        <p>Statutory registrations, bank setup, and HR framework.</p>
+                        <div class="phase-outcome-tag">Ready structure</div>
+                    </div>
+                    <!-- Phase 4 -->
+                    <div class="roadmap-phase reveal" style="transition-delay: 0.3s;">
+                        <div class="phase-circle">04</div>
+                        <h4>Launch & Execute</h4>
+                        <p>Sales rollout, distributor onboarding, and trade operations.</p>
+                        <div class="phase-outcome-tag">Active presence</div>
+                    </div>
+                    <!-- Phase 5 -->
+                    <div class="roadmap-phase reveal" style="transition-delay: 0.4s;">
+                        <div class="phase-circle">05</div>
+                        <h4>Scale & Optimise</h4>
+                        <p>Expansion, channel penetration, and cost optimisation.</p>
+                        <div class="phase-outcome-tag">Sustainable GRowth</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pan-India Presence Section -->
+    <section id="map-section" class="map-section-refined">
+        <div class="container">
+            <div class="map-header">
+                <div class="reveal-left">
+                    <h3 class="subsection-tagline" style="color: var(--gold);">Pan-India Presence</h3>
+                    <h2 class="section-title" style="color: var(--navy);">Our Operational <em>Reach</em></h2>
+                    <p class="lead"
+                        style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; max-width: 600px;">
+                        Active market coverage across India's major commercial, industrial, and infrastructure hubs
+                        — with capabilities spanning multiple service verticals.</p>
+                </div>
+                <div class="map-points-grid reveal-right">
+                    <div class="map-point-card">
+                        <div class="map-point-dot" style="background: var(--gold);"></div>
+                        <div class="map-point-info">
+                            <h4>Headquarters</h4>
+                            <p>Primary operations base for service delivery and OEM engagements</p>
+                        </div>
+                    </div>
+                    <div class="map-point-card">
+                        <div class="map-point-dot" style="background: #4A90D9;"></div>
+                        <div class="map-point-info">
+                            <h4>Industrial Hubs</h4>
+                            <p>Manufacturing zones and construction corridors</p>
+                        </div>
+                    </div>
+                    <div class="map-point-card">
+                        <div class="map-point-dot" style="background: #E8A230;"></div>
+                        <div class="map-point-info">
+                            <h4>Trade & Port Cities</h4>
+                            <p>Import/export facilitation and commodity centres</p>
+                        </div>
+                    </div>
+                    <div class="map-point-card">
+                        <div class="map-point-dot" style="background: #5BAD72;"></div>
+                        <div class="map-point-info">
+                            <h4>Channel Distribution</h4>
+                            <p>K-Beauty and Medical implants via Loche India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container-wrapper">
+                <div id="map"></div>
+                <div class="map-legend">
+                    <div class="legend-item"><span class="dot" style="background: var(--gold);"></span> Headquarters
+                    </div>
+                    <div class="legend-item"><span class="dot" style="background: #4A90D9;"></span> Industrial Hubs
+                    </div>
+                    <div class="legend-item"><span class="dot" style="background: #E8A230;"></span> Trade & Port
+                        Cities</div>
+                    <div class="legend-item"><span class="dot" style="background: #5BAD72;"></span> Channel
+                        Distribution</div>
+                </div>
             </div>
         </div>
     </section>
@@ -658,12 +605,12 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                        <div class="contact-icon" style="background: #25D366; color: white;">
+                            <i class="fab fa-whatsapp"></i>
                         </div>
                         <div class="contact-text">
-                            <h3>Direct Line</h3>
-                            <p>+91 9711118551</p>
+                            <h3>Whatsapp Line</h3>
+                            <p><a href="https://wa.me/919711118551" style="color: inherit;">+91 9711118551</a></p>
                         </div>
                     </div>
                 </div>
@@ -724,7 +671,8 @@
             <h3 class="subsection-title">Chairman / Founder’s Message</h3>
 
             <p style="font-style: italic; margin-bottom: 2rem; color: var(--text-muted);">"At Exigencies Mercantile
-                India Private Limited, our journey is guided by a simple yet powerful belief — true leadership is built
+                India Private Limited, our journey is guided by a simple yet powerful belief — true leadership is
+                built
                 on trust, discipline, and the consistent delivery of results."</p>
 
             <blockquote>
@@ -775,9 +723,110 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
     <script>
+        // Leaflet Map Initialization
+        window.addEventListener('load', function () {
+            const map = L.map('map', {
+                center: [20.5937, 78.9629],
+                zoom: 5,
+                scrollWheelZoom: false,
+                zoomControl: true,
+            });
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '© OpenStreetMap contributors © CARTO',
+                subdomains: 'abcd',
+                maxZoom: 19
+            }).addTo(map);
+
+            const makeIcon = (color, size = 12) => L.divIcon({
+                className: '',
+                html: `<div style="width:${size}px;height:${size}px;border-radius:50%;background:${color};border:2px solid rgba(255,255,255,.6);box-shadow:0 0 10px ${color}88;"></div>`,
+                iconSize: [size, size],
+                iconAnchor: [size / 2, size / 2]
+            });
+
+            const HQ = '#C9A84C';
+            const IND = '#4A90D9';
+            const TRADE = '#E8A230';
+            const CHANNEL = '#5BAD72';
+
+            const locations = [
+                { lat: 19.076, lng: 72.877, color: HQ, size: 18, name: 'Mumbai HQ', desc: 'Primary operations — all 7 service verticals' },
+                { lat: 28.6139, lng: 77.2090, color: IND, size: 13, name: 'Delhi NCR', desc: 'OEM representation, liaisoning, government relations' },
+                { lat: 22.5726, lng: 88.3639, color: IND, size: 12, name: 'Kolkata', desc: 'Heavy equipment, scrap trading, port logistics' },
+                { lat: 13.0827, lng: 80.2707, color: IND, size: 12, name: 'Chennai', desc: 'Manufacturing, OEM representation, automotive sector' },
+                { lat: 17.3850, lng: 78.4867, color: IND, size: 12, name: 'Hyderabad', desc: 'Industrial production, infrastructure projects' },
+                { lat: 23.0225, lng: 72.5714, color: IND, size: 12, name: 'Ahmedabad', desc: 'Manufacturing hub, industrial goods, textiles' },
+                { lat: 12.9716, lng: 77.5946, color: IND, size: 12, name: 'Bengaluru', desc: 'OEM tech partnerships, industrial representation' },
+                { lat: 22.3072, lng: 73.1812, color: TRADE, size: 11, name: 'Vadodara', desc: 'Food & agro trading, chemical industrial zone' },
+                { lat: 9.9312, lng: 76.2673, color: TRADE, size: 11, name: 'Kochi', desc: 'Spice, food commodity trade, sea port logistics' },
+                { lat: 17.6868, lng: 83.2185, color: TRADE, size: 11, name: 'Visakhapatnam', desc: 'Steel, scrap, port-based commodity trade' },
+                { lat: 21.1458, lng: 79.0882, color: TRADE, size: 11, name: 'Nagpur', desc: 'Central India agro hub, food commodity, logistics' },
+                { lat: 26.9124, lng: 75.7873, color: TRADE, size: 11, name: 'Jaipur', desc: 'Land acquisition, commercial real estate, retail' },
+                { lat: 18.5204, lng: 73.8567, color: TRADE, size: 11, name: 'Pune', desc: 'Agro, engineering goods, construction machinery' },
+                { lat: 28.7041, lng: 77.1025, color: CHANNEL, size: 11, name: 'Delhi — Channel Hub', desc: 'K-Beauty & Medical Implant distribution via Loche India' },
+                { lat: 19.0760, lng: 72.8777, color: CHANNEL, size: 11, name: 'Mumbai — Channel Hub', desc: 'Bellaluna K-Beauty & SG Implant — Loche India' },
+                { lat: 12.9716, lng: 77.5946, color: CHANNEL, size: 10, name: 'Bengaluru — Channel Hub', desc: 'K-Beauty salon & spa distribution, dental clinics' },
+                { lat: 13.0827, lng: 80.2707, color: CHANNEL, size: 10, name: 'Chennai — Channel Hub', desc: 'SG Implant dental network, K-Beauty retail' },
+                { lat: 22.5726, lng: 88.3639, color: CHANNEL, size: 10, name: 'Kolkata — Channel Hub', desc: 'K-Beauty e-commerce & wholesale, medical distribution' },
+                { lat: 17.3850, lng: 78.4867, color: CHANNEL, size: 10, name: 'Hyderabad — Channel Hub', desc: 'Dental implant clinics, K-Beauty retail network' },
+            ];
+
+            locations.forEach(loc => {
+                L.marker([loc.lat, loc.lng], { icon: makeIcon(loc.color, loc.size) })
+                    .addTo(map)
+                    .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
+            });
+
+            // Animated pulse on HQ
+            const pulseIcon = L.divIcon({
+                className: '',
+                html: `<div style="position:relative;width:24px;height:24px">
+                    <div style="position:absolute;inset:0;border-radius:50%;background:#C9A84C;animation:mapPulse 2s ease infinite"></div>
+                    <div style="position:absolute;inset:4px;border-radius:50%;background:#C9A84C;border:2px solid white"></div>
+                </div>
+                <style>@keyframes mapPulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.8);opacity:0}}</style>`,
+                iconSize: [24, 24],
+                iconAnchor: [12, 12]
+            });
+            L.marker([19.076, 72.877], { icon: pulseIcon }).addTo(map);
+        });
+
+        // Floating Particles Logic
+        function createParticles() {
+            const container = document.querySelector('.strategic-foundation');
+            if (!container) return;
+            for (let i = 0; i < 20; i++) {
+                const p = document.createElement('div');
+                p.className = 'dust-particle';
+                const size = Math.random() * 3 + 1;
+                p.style.width = size + 'px';
+                p.style.height = size + 'px';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.top = Math.random() * 100 + '%';
+                p.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                p.style.animationDelay = (Math.random() * 5) + 's';
+                container.appendChild(p);
+            }
+        }
+        window.addEventListener('load', createParticles);
+
+        // Advanced Reveal on Scroll
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
         document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+                revealObserver.observe(el);
+            });
             const servicesSwiper = new Swiper('.services-swiper', {
                 slidesPerView: 1,
                 spaceBetween: 30,
@@ -795,13 +844,47 @@
                     prevEl: '.services-prev',
                 },
                 breakpoints: {
-                    // when window width is >= 768px
-                    768: {
-                        slidesPerView: 2,
-                    },
-                    // when window width is >= 1024px
-                    1024: {
-                        slidesPerView: 3,
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 }
+                }
+            });
+
+            // Strategic Advantage Carousel
+            const strategicSwiper = new Swiper('.strategic-swiper', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                loop: true,
+                loopedSlides: 6, // Matches the exact number of slides you have
+                slidesPerView: 'auto', // Dynamic width based on CSS
+                slideToClickedSlide: true, // Click any slide to bring it to center
+                watchSlidesProgress: true,
+                speed: 800, // Smooth transition speed
+                autoplay: {
+                    delay: 2500, // Pause so user can read and click
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false,
+                },
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: -70, // Pulls the side elements closely right behind the first ones
+                    depth: 100, // Provides 3D perspective sizing
+                    modifier: 1,
+                    slideShadows: false,
+                    scale: 0.8 // Swiper native scaling prevents alignment issues
+                },
+                on: {
+                    click: function (swiper, event) {
+                        // Find the actual clicked slide element
+                        const clickedElement = event.target.closest('.swiper-slide');
+                        if (clickedElement) {
+                            // Extract the real index of the slide (works for looped duplicates too)
+                            const realIndex = clickedElement.getAttribute('data-swiper-slide-index');
+                            if (realIndex !== null) {
+                                // Slide directly to the real index in the loop
+                                swiper.slideToLoop(parseInt(realIndex));
+                            }
+                        }
                     }
                 }
             });

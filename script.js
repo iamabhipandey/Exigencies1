@@ -43,50 +43,74 @@ function initUI() {
         });
     }
 
-    // Smooth Scrolling for Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Smooth Scrolling for Anchor Links & Mobile Menu Close
+    document.querySelectorAll('.nav-link, .btn-header-cta, a[href*="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
 
-            // If it's a hash link on the same page
-            if (href.startsWith('#')) {
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    // Close mobile menu if open
-                    if (navList && navList.classList.contains('active')) {
-                        navList.classList.remove('active');
-                        const icon = menuToggle.querySelector('i');
-                        if (icon) {
-                            icon.classList.add('fa-bars');
-                            icon.classList.remove('fa-times');
-                        }
+            // Close mobile menu on any link click
+            if (navList && navList.classList.contains('active')) {
+                navList.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            }
+
+            // Check if it's an anchor link to the current page
+            if (href.includes('#')) {
+                const targetId = href.substring(href.indexOf('#'));
+                const pagePart = href.substring(0, href.indexOf('#'));
+
+                // If it's a direct hash, or points to the current page (index.html or root)
+                const isCurrentPage = pagePart === '' ||
+                    (pagePart === 'index.html' && (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')));
+
+                if (isCurrentPage) {
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
                     }
                 }
             }
         });
     });
 
-    // Header Background on Scroll
+    // Highlight Active Link based on current page
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href) {
+            // Do not highlight purely section links as 'active' page links (except via scroll spy if needed later)
+            if (href.includes('#') && !href.startsWith('#') && href.split('#')[0] === currentPath) {
+                link.classList.remove('active');
+            } else if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        }
+    });
+
+    // Header Scroll Effect
     const header = document.getElementById('header');
     if (header) {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            if (window.scrollY > 30) {
+                header.classList.add('scrolled');
             } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = 'none';
+                header.classList.remove('scrolled');
             }
         });
     }
 
     // Reveal Animations on Scroll
-    const revealElements = document.querySelectorAll('.service-card, .feature-item, .about-main-text, .chairman-visual, .chairman-content, .mv-card, .timeline-item, .industry-card, .chairman-refined-content');
+    const revealElements = document.querySelectorAll('.reveal, .service-card, .feature-item, .about-main-text, .chairman-visual, .chairman-content, .mv-card, .timeline-item, .industry-card, .chairman-refined-content');
 
     const revealOnScroll = () => {
         const windowHeight = window.innerHeight;
@@ -96,17 +120,20 @@ function initUI() {
             const elementTop = element.getBoundingClientRect().top;
             if (elementTop < windowHeight - elementVisible) {
                 element.classList.add('active');
+                // Ensure inline styles don't conflict with CSS transitions if applicable
                 element.style.opacity = '1';
                 element.style.transform = 'translateY(0)';
             }
         });
     };
 
-    // Initial styles for reveal elements
+    // Initial styles for reveal elements if not already handled by CSS
     revealElements.forEach((element) => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'all 0.6s ease-out';
+        if (!element.classList.contains('active')) {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s ease-out';
+        }
     });
 
     window.addEventListener('scroll', revealOnScroll);
@@ -224,14 +251,23 @@ function initUI() {
     }
 
     // Modal Logic
-    const chairmanBtn = document.getElementById('chairman-read-more-btn');
+    const chairmanBtns = [
+        document.getElementById('chairman-read-more-btn'),
+        document.getElementById('chairman-read-more-btn-2'),
+        document.getElementById('chairman-read-more-btn-details'),
+        document.getElementById('chairman-read-more-btn-modal')
+    ];
     const chairmanModal = document.getElementById('chairman-modal');
     const closeChairmanBtn = document.getElementById('close-modal-btn');
 
-    if (chairmanBtn && chairmanModal && closeChairmanBtn) {
-        chairmanBtn.addEventListener('click', () => {
-            chairmanModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+    if (chairmanModal && closeChairmanBtn) {
+        chairmanBtns.forEach(btn => {
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    chairmanModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
         });
 
         const closeCModal = () => {
@@ -249,6 +285,7 @@ function initUI() {
     }
 
     // Note: About Us button is now a link to about.html handled in HTML
+
 }
 
 // Start sequence
