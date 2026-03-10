@@ -329,18 +329,10 @@
 
             <div class="ind-grid reveal">
                 <div class="ind-card">
-                    <img class="ind-card-img" src="images/ind_infrastructure.png" alt="Infrastructure">
-                    <div class="ind-card-overlay">
-                        <div class="ind-card-num">01</div>
-                        <h3>Infrastructure & Construction</h3>
-                        <p class="ind-card-p">NIP-backed growth — machinery supply, maintenance, and project support</p>
-                    </div>
-                </div>
-                <div class="ind-card">
                     <span class="ind-new-badge">NEW</span>
                     <img class="ind-card-img" src="images/k_beauty_cosmetics.png" alt="K-Beauty">
                     <div class="ind-card-overlay">
-                        <div class="ind-card-num">02</div>
+                        <div class="ind-card-num">01</div>
                         <h3>Cosmetics — K-Beauty</h3>
                         <p class="ind-card-p">GLOSSYS · BREIL · CUREST — authorised South Korean skincare brands via
                             bellaluna.in</p>
@@ -350,28 +342,45 @@
                     <span class="ind-new-badge">NEW</span>
                     <img class="ind-card-img" src="images/ind_dental_implants.png" alt="Medical">
                     <div class="ind-card-overlay">
-                        <div class="ind-card-num">03</div>
+                        <div class="ind-card-num">02</div>
                         <h3>Medical Implants — Dental</h3>
                         <p class="ind-card-p">SG Implant systems — CDSCO-compliant distribution across India's dental
                             network</p>
                     </div>
                 </div>
                 <div class="ind-card">
-                    <img class="ind-card-img" src="images/ind_heavy_equipment.png" alt="Heavy Equipment">
+                    <img class="ind-card-img" src="images/ind_commercial_real_estate.png" alt="Real Estate">
+                    <div class="ind-card-overlay">
+                        <div class="ind-card-num">03</div>
+                        <h3>Commercial Real Estate</h3>
+                        <p class="ind-card-p">Land acquisition, showroom and industrial property — end-to-end advisory
+                        </p>
+                    </div>
+                </div>
+                <div class="ind-card">
+                    <img class="ind-card-img" src="images/ind_infrastructure.png" alt="Infrastructure">
                     <div class="ind-card-overlay">
                         <div class="ind-card-num">04</div>
-                        <h3>Heavy Equipment & Engineering</h3>
-                        <p class="ind-card-p">Market development, lifecycle maintenance, and spare parts distribution
-                        </p>
+                        <h3>Infrastructure & Construction</h3>
+                        <p class="ind-card-p">NIP-backed growth — machinery supply, maintenance, and project support</p>
                     </div>
                 </div>
             </div>
 
             <div class="ind-grid-2 reveal">
                 <div class="ind-card">
-                    <img class="ind-card-img" src="images/ind_agro_food.png" alt="Food">
+                    <img class="ind-card-img" src="images/ind_heavy_equipment.png" alt="Heavy Equipment">
                     <div class="ind-card-overlay">
                         <div class="ind-card-num">05</div>
+                        <h3>Heavy Equipment & Engineering</h3>
+                        <p class="ind-card-p">Market development, lifecycle maintenance, and spare parts distribution
+                        </p>
+                    </div>
+                </div>
+                <div class="ind-card">
+                    <img class="ind-card-img" src="images/ind_agro_food.png" alt="Food">
+                    <div class="ind-card-overlay">
+                        <div class="ind-card-num">06</div>
                         <h3>Food & Agro Products</h3>
                         <p class="ind-card-p">FSSAI-compliant commodity trading — raw, processed, frozen food products
                         </p>
@@ -380,18 +389,9 @@
                 <div class="ind-card">
                     <img class="ind-card-img" src="images/ind_industrial_scrap.png" alt="Scrap">
                     <div class="ind-card-overlay">
-                        <div class="ind-card-num">06</div>
+                        <div class="ind-card-num">07</div>
                         <h3>Refurbishing & Industrial Scrap</h3>
                         <p class="ind-card-p">Ferrous and non-ferrous scrap trading with environmental compliance</p>
-                    </div>
-                </div>
-                <div class="ind-card">
-                    <img class="ind-card-img" src="images/ind_commercial_real_estate.png" alt="Real Estate">
-                    <div class="ind-card-overlay">
-                        <div class="ind-card-num">07</div>
-                        <h3>Commercial Real Estate</h3>
-                        <p class="ind-card-p">Land acquisition, showroom and industrial property — end-to-end advisory
-                        </p>
                     </div>
                 </div>
             </div>
@@ -550,7 +550,7 @@
                         <div class="map-point-dot" style="background: #5BAD72;"></div>
                         <div class="map-point-info">
                             <h4>Channel Distribution</h4>
-                            <p>K-Beauty and Medical implants via Loche India</p>
+                            <p>K-Beauty and Medical implants Loche India</p>
                         </div>
                     </div>
                 </div>
@@ -754,8 +754,8 @@
             const CHANNEL = '#5BAD72';
 
             const locations = [
-                { lat: 19.076, lng: 72.877, color: HQ, size: 18, name: 'Mumbai HQ', desc: 'Primary operations — all 7 service verticals' },
-                { lat: 28.6139, lng: 77.2090, color: IND, size: 13, name: 'Delhi NCR', desc: 'OEM representation, liaisoning, government relations' },
+                { lat: 28.6139, lng: 77.2090, color: HQ, size: 18, name: 'New Delhi HQ', desc: 'Primary operations — all 7 service verticals' },
+                { lat: 19.076, lng: 72.877, color: IND, size: 13, name: 'Mumbai', desc: 'OEM representation, liaisoning, government relations' },
                 { lat: 22.5726, lng: 88.3639, color: IND, size: 12, name: 'Kolkata', desc: 'Heavy equipment, scrap trading, port logistics' },
                 { lat: 13.0827, lng: 80.2707, color: IND, size: 12, name: 'Chennai', desc: 'Manufacturing, OEM representation, automotive sector' },
                 { lat: 17.3850, lng: 78.4867, color: IND, size: 12, name: 'Hyderabad', desc: 'Industrial production, infrastructure projects' },
@@ -767,7 +767,7 @@
                 { lat: 21.1458, lng: 79.0882, color: TRADE, size: 11, name: 'Nagpur', desc: 'Central India agro hub, food commodity, logistics' },
                 { lat: 26.9124, lng: 75.7873, color: TRADE, size: 11, name: 'Jaipur', desc: 'Land acquisition, commercial real estate, retail' },
                 { lat: 18.5204, lng: 73.8567, color: TRADE, size: 11, name: 'Pune', desc: 'Agro, engineering goods, construction machinery' },
-                { lat: 28.7041, lng: 77.1025, color: CHANNEL, size: 11, name: 'Delhi — Channel Hub', desc: 'K-Beauty & Medical Implant distribution via Loche India' },
+                { lat: 28.7041, lng: 77.1025, color: CHANNEL, size: 11, name: 'Delhi — Channel Hub', desc: 'K-Beauty & Medical Implant distribution Loche India' },
                 { lat: 19.0760, lng: 72.8777, color: CHANNEL, size: 11, name: 'Mumbai — Channel Hub', desc: 'Bellaluna K-Beauty & SG Implant — Loche India' },
                 { lat: 12.9716, lng: 77.5946, color: CHANNEL, size: 10, name: 'Bengaluru — Channel Hub', desc: 'K-Beauty salon & spa distribution, dental clinics' },
                 { lat: 13.0827, lng: 80.2707, color: CHANNEL, size: 10, name: 'Chennai — Channel Hub', desc: 'SG Implant dental network, K-Beauty retail' },
@@ -792,7 +792,7 @@
                 iconSize: [24, 24],
                 iconAnchor: [12, 12]
             });
-            L.marker([19.076, 72.877], { icon: pulseIcon }).addTo(map);
+            L.marker([28.6139, 77.2090], { icon: pulseIcon }).addTo(map);
         });
 
         // Floating Particles Logic

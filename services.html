@@ -14,6 +14,116 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Legal Accordion Styling */
+        .legal-accordion {
+            margin-top: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .accordion-header:hover {
+            background: rgba(201, 168, 76, 0.05);
+        }
+
+        .accordion-item.active .accordion-header {
+            background: rgba(201, 168, 76, 0.08);
+        }
+
+        .header-num {
+            font-family: var(--font-body);
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-right: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            width: 25px;
+        }
+
+        .header-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            flex-grow: 1;
+        }
+
+        .header-icon {
+            color: var(--accent-gold);
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .accordion-item.active .header-icon {
+            transform: rotate(45deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 2000px;
+        }
+
+        .content-inner {
+            padding: 0 2rem 2rem 5.5rem;
+            color: var(--text-dark);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Regulatory Grid */
+        .regulatory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .reg-pill {
+            background: var(--background-alt);
+            border: 1px solid rgba(201, 168, 76, 0.1);
+            padding: 0.6rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .reg-pill:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+            background: white;
+            box-shadow: 0 5px 15px rgba(201, 168, 76, 0.1);
+        }
+    </style>
 </head>
 
 <body>
@@ -76,41 +186,44 @@
     <section class="services-modern-list" style="padding: 4rem 0; background-color: var(--background-alt);">
         <div class="container">
 
-            <!-- Service 01: Brand & OEM Representation -->
+            <!-- Service 01: Cosmetics — K-Beauty -->
             <div class="svc-detail reveal" id="svc1">
                 <div>
                     <div class="svc-detail-num">01</div>
-                    <h3>🤝 &nbsp;Brand & OEM Representation</h3>
+                    <h3>💄 &nbsp;Cosmetics — K-Beauty</h3>
                     <div class="gold-rule"></div>
-                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 2rem;">We
-                        serve as the authorised strategic partner for international and domestic brands entering or
-                        expanding in India. Our representation extends far beyond basic agency agreements — we assume
-                        full commercial, operational, and compliance responsibility for your brand.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 2rem;">
+                        Bridging the gap between South Korean innovation and Indian retail. Through our vertical
+                        <strong>Loche India</strong>, we are the exclusive authorised wholesaler for premium brands
+                        via <em>bellaluna.in</em>.
+                    </p>
                     <ul class="styled">
-                        <li>Market entry strategy, feasibility assessment, and regulatory pathway mapping</li>
-                        <li>Company incorporation, branch office or liaison office establishment</li>
-                        <li>Product registration, import licensing, and statutory approvals</li>
-                        <li>Distributor, dealer, and channel partner identification and onboarding</li>
-                        <li>Sales force setup, training, and performance management</li>
-                        <li>Brand protection, IP filing, and trademark registration support</li>
-                        <li>After-sales service infrastructure development and marketing localisation</li>
+                        <li>Exclusive distribution: GLOSSYS, BREIL, CUREST</li>
+                        <li>B2B onboarding for retail chains, salons, and spas</li>
+                        <li>Complete CDSCO and BIS import compliance management</li>
+                        <li>Digital marketing and brand localization strategies</li>
+                        <li
+                            style="margin-top: 1rem; border-top: 1px dashed rgba(201, 168, 76, 0.3); padding-top: 1.5rem; font-weight: 500;">
+                            B] Providing consultancy services for OEM/ODM/ OBM / OPM to Indian manufacturers and
+                            startups.
+                        </li>
                     </ul>
                 </div>
                 <div class="svc-detail-panel">
-                    <h4>Key Capabilities</h4>
+                    <h4>Vertical Focus</h4>
                     <div class="svc-tag-grid">
-                        <div class="svc-tag-item">Market Entry</div>
-                        <div class="svc-tag-item">Compliance</div>
-                        <div class="svc-tag-item">Channel Dev</div>
-                        <div class="svc-tag-item">Brand Protection</div>
+                        <div class="svc-tag-item">K-Beauty</div>
+                        <div class="svc-tag-item">Wholesale</div>
+                        <div class="svc-tag-item">B2B Retail</div>
+                        <div class="svc-tag-item">Consultancy</div>
                     </div>
                     <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
                         <p
                             style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7; margin-bottom: 2rem;">
-                            Seeking a dedicated representative to manage your Indian operations?</p>
-                        <a href="contact.html" class="btn-partner"
-                            style="padding: 1rem 2rem; text-decoration: none; display: flex; justify-content: center;">Start
-                            Discussion</a>
+                            Direct B2B access to premium South Korean skincare innovation.</p>
+                        <a href="https://bellaluna.in" target="_blank" class="btn-partner"
+                            style="padding: 1rem 2rem; text-decoration: none; display: flex; justify-content: center;">Visit
+                            Bellaluna ↗</a>
                     </div>
                 </div>
             </div>
@@ -146,9 +259,18 @@
                         <p
                             style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7; margin-bottom: 2rem;">
                             Efficient, compliant trading solutions for the Indian market.</p>
-                        <a href="contact.html" class="btn-partner"
-                            style="padding: 1rem 2rem; text-decoration: none; display: flex; justify-content: center;">Inquire
-                            Now</a>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="https://wa.me/919711118551" target="_blank" class="btn-partner"
+                                style="flex: 1; font-size: 0.85rem; padding: 0.8rem 0.3rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem;">
+                                <div><i class="fab fa-whatsapp"></i> WhatsApp</div>
+                                <div style="font-size: 0.6rem; opacity: 0.8;">Inquire Now</div>
+                            </a>
+                            <a href="mailto:info@exigencies.in" class="btn-partner"
+                                style="flex: 1; font-size: 0.85rem; padding: 0.8rem 0.3rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem; background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold);">
+                                <div><i class="fas fa-envelope"></i> Email</div>
+                                <div style="font-size: 0.6rem; opacity: 0.8;">Inquire Now</div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -184,17 +306,73 @@
                         <p
                             style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7; margin-bottom: 2rem;">
                             Maximising uptime for India's infrastructure projects.</p>
-                        <a href="contact.html" class="btn-partner"
-                            style="padding: 1rem 2rem; text-decoration: none; display: flex; justify-content: center;">Service
-                            Request</a>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="https://wa.me/919711118551" target="_blank" class="btn-partner"
+                                style="flex: 1; font-size: 0.85rem; padding: 0.8rem 0.3rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem;">
+                                <div><i class="fab fa-whatsapp"></i> WhatsApp</div>
+                                <div style="font-size: 0.6rem; opacity: 0.8;">Service Request</div>
+                            </a>
+                            <a href="mailto:info@exigencies.in" class="btn-partner"
+                                style="flex: 1; font-size: 0.85rem; padding: 0.8rem 0.3rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem; background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold);">
+                                <div><i class="fas fa-envelope"></i> Email</div>
+                                <div style="font-size: 0.6rem; opacity: 0.8;">Service Request</div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 04: Scrap Trading -->
+            <!-- Service 04: Commercial Real Estate (MOVED FROM 05) -->
             <div class="svc-detail reveal" id="svc4">
                 <div>
                     <div class="svc-detail-num">04</div>
+                    <h3>🏢 &nbsp;Commercial Real Estate & Investment</h3>
+                    <div class="gold-rule"></div>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 2rem;">We
+                        provide end-to-end advisory and execution support for commercial property acquisition, land
+                        investment, and real estate development across India for industrial enterprises and investors.
+                    </p>
+                    <ul class="styled">
+                        <li>Site identification and location feasibility analysis</li>
+                        <li>Title verification, encumbrance search, and full legal due diligence</li>
+                        <li>Zoning, land use, and regulatory approval assessment</li>
+                        <li>Showroom, warehouse, and industrial shed acquisition</li>
+                        <li>Commercial land parcels for manufacturing or logistics development</li>
+                        <li>Liaisoning with government bodies for all required permits</li>
+                    </ul>
+                </div>
+                <div class="svc-detail-panel">
+                    <h4 class="mt-2">Key Assets</h4>
+                    <div class="svc-tag-grid">
+                        <div class="svc-tag-item">Site Select</div>
+                        <div class="svc-tag-item">Due Diligence</div>
+                        <div class="svc-tag-item">Negotiation</div>
+                        <div class="svc-tag-item">Liaisoning</div>
+                    </div>
+                    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                        <p
+                            style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7; margin-bottom: 2rem;">
+                            Strategic land banking and facility acquisition support.</p>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="https://wa.me/919711118551" target="_blank" class="btn-partner"
+                                style="flex: 1; font-size: 0.85rem; padding: 0.8rem 0.3rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem;">
+                                <div><i class="fab fa-whatsapp"></i> WhatsApp</div>
+                                <div style="font-size: 0.6rem; opacity: 0.8;">Real Estate Advisory</div>
+                            </a>
+                            <a href="mailto:info@exigencies.in" class="btn-partner"
+                                style="flex: 1; font-size: 0.85rem; padding: 0.8rem 0.3rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem; background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold);">
+                                <div><i class="fas fa-envelope"></i> Email</div>
+                                <div style="font-size: 0.6rem; opacity: 0.8;">Real Estate Advisory</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 05: Scrap Trading (MOVED FROM 04) -->
+            <div class="svc-detail reveal" id="svc5">
+                <div>
+                    <div class="svc-detail-num">05</div>
                     <h3>♻️ &nbsp;Industrial Scrap Trading & Recycling</h3>
                     <div class="gold-rule"></div>
                     <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 2rem;">We
@@ -222,47 +400,18 @@
                         <p
                             style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7; margin-bottom: 2rem;">
                             Sustainable raw material sourcing for global industry.</p>
-                        <a href="contact.html" class="btn-partner"
-                            style="padding: 1rem 2rem; text-decoration: none; display: flex; justify-content: center;">Trade
-                            Inquiry</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Service 05: Land Acquisition -->
-            <div class="svc-detail reveal" id="svc5">
-                <div>
-                    <div class="svc-detail-num">05</div>
-                    <h3>🏢 &nbsp;Land Acquisition & Investment</h3>
-                    <div class="gold-rule"></div>
-                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 2rem;">We
-                        provide end-to-end advisory and execution support for commercial property acquisition, land
-                        investment, and real estate development across India for industrial enterprises and investors.
-                    </p>
-                    <ul class="styled">
-                        <li>Site identification and location feasibility analysis</li>
-                        <li>Title verification, encumbrance search, and full legal due diligence</li>
-                        <li>Zoning, land use, and regulatory approval assessment</li>
-                        <li>Showroom, warehouse, and industrial shed acquisition</li>
-                        <li>Commercial land parcels for manufacturing or logistics development</li>
-                        <li>Liaisoning with government bodies for all required permits</li>
-                    </ul>
-                </div>
-                <div class="svc-detail-panel">
-                    <h4>Key Assets</h4>
-                    <div class="svc-tag-grid">
-                        <div class="svc-tag-item">Site Select</div>
-                        <div class="svc-tag-item">Due Diligence</div>
-                        <div class="svc-tag-item">Negotiation</div>
-                        <div class="svc-tag-item">Liaisoning</div>
-                    </div>
-                    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                        <p
-                            style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7; margin-bottom: 2rem;">
-                            Strategic land banking and facility acquisition support.</p>
-                        <a href="contact.html" class="btn-partner"
-                            style="padding: 1rem 2rem; text-decoration: none; display: flex; justify-content: center;">Real
-                            Estate Advisory</a>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="https://wa.me/919711118551" target="_blank" class="btn-partner"
+                                style="flex: 1; font-size: 0.85rem; padding: 0.8rem 0.3rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem;">
+                                <div><i class="fab fa-whatsapp"></i> WhatsApp</div>
+                                <div style="font-size: 0.6rem; opacity: 0.8;">Trade Inquiry</div>
+                            </a>
+                            <a href="mailto:info@exigencies.in" class="btn-partner"
+                                style="flex: 1; font-size: 0.85rem; padding: 0.8rem 0.3rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem; background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold);">
+                                <div><i class="fas fa-envelope"></i> Email</div>
+                                <div style="font-size: 0.6rem; opacity: 0.8;">Trade Inquiry</div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -271,7 +420,7 @@
             <div class="svc-detail reveal" id="svc6">
                 <div>
                     <div class="svc-detail-num">06</div>
-                    <h3>🏛️ &nbsp;Liaisoning & Representation</h3>
+                    <h3>🏛️ &nbsp;Legal Representation & Liaisoning</h3>
                     <div class="gold-rule"></div>
                     <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 2rem;">We
                         serve as authorised representatives for corporate entities requiring professional coordination
@@ -284,6 +433,116 @@
                         <li>Public sector procurement — documentation, bidding, and follow-up</li>
                         <li>Statutory filing coordination and compliance monitoring</li>
                     </ul>
+
+                    <div class="legal-accordion" style="margin-top: 2.5rem;">
+                        <div class="accordion-item" onclick="this.classList.toggle('active')">
+                            <div class="accordion-header">
+                                <span class="header-num"><i class="fas fa-list"></i></span>
+                                <span class="header-title">Detailed Strategic Practice Areas</span>
+                                <i class="fas fa-plus header-icon"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="content-inner" style="padding: 1rem 2rem 2rem 2rem; overflow-x: auto;">
+                                    <table
+                                        style="width: 100%; border-collapse: collapse; text-align: left; min-width: 600px;">
+                                        <thead>
+                                            <tr>
+                                                <th
+                                                    style="padding: 1.2rem 1rem; border-bottom: 2px solid var(--accent-gold); color: var(--primary-color); font-family: var(--font-heading); font-size: 1.1rem; width: 40%;">
+                                                    Practice Area</th>
+                                                <th
+                                                    style="padding: 1.2rem 1rem; border-bottom: 2px solid var(--accent-gold); color: var(--primary-color); font-family: var(--font-heading); font-size: 1.1rem; width: 60%;">
+                                                    Key Content</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style="border-bottom: 1px solid rgba(201, 168, 76, 0.15); transition: background 0.3s ease;"
+                                                onmouseover="this.style.backgroundColor='rgba(201, 168, 76, 0.05)'"
+                                                onmouseout="this.style.backgroundColor='transparent'">
+                                                <td
+                                                    style="padding: 1.2rem 1rem; font-weight: 600; color: var(--navy); display: flex; align-items: center; gap: 0.8rem;">
+                                                    <span
+                                                        style="color: var(--gold); font-size: 0.8rem; font-weight: 700;">01</span>
+                                                    Government Relations
+                                                </td>
+                                                <td style="padding: 1.2rem 1rem; color: var(--text-dark);">
+                                                    Central/State/Local body coordination, ministry liaison, typical
+                                                    engagements panel</td>
+                                            </tr>
+                                            <tr style="border-bottom: 1px solid rgba(201, 168, 76, 0.15); transition: background 0.3s ease;"
+                                                onmouseover="this.style.backgroundColor='rgba(201, 168, 76, 0.05)'"
+                                                onmouseout="this.style.backgroundColor='transparent'">
+                                                <td
+                                                    style="padding: 1.2rem 1rem; font-weight: 600; color: var(--navy); display: flex; align-items: flex-start; gap: 0.8rem;">
+                                                    <span
+                                                        style="color: var(--gold); font-size: 0.8rem; font-weight: 700; margin-top: 5px;">02</span>
+                                                    Regulatory Approvals &amp; Clearances
+                                                </td>
+                                                <td style="padding: 1.2rem 1rem; color: var(--text-dark);">
+                                                    FSSAI, BIS, CDSCO, DGFT, GST, PCB — with a visual grid of regulatory
+                                                    bodies
+                                                    <div class="regulatory-grid"
+                                                        style="margin-top: 0.8rem; justify-content: flex-start; gap: 0.5rem;">
+                                                        <div class="reg-pill"
+                                                            style="padding: 0.4rem 0.6rem; font-size: 0.7rem;">FSSAI
+                                                        </div>
+                                                        <div class="reg-pill"
+                                                            style="padding: 0.4rem 0.6rem; font-size: 0.7rem;">BIS</div>
+                                                        <div class="reg-pill"
+                                                            style="padding: 0.4rem 0.6rem; font-size: 0.7rem;">CDSCO
+                                                        </div>
+                                                        <div class="reg-pill"
+                                                            style="padding: 0.4rem 0.6rem; font-size: 0.7rem;">DGFT
+                                                        </div>
+                                                        <div class="reg-pill"
+                                                            style="padding: 0.4rem 0.6rem; font-size: 0.7rem;">GST</div>
+                                                        <div class="reg-pill"
+                                                            style="padding: 0.4rem 0.6rem; font-size: 0.7rem;">PCB</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr style="border-bottom: 1px solid rgba(201, 168, 76, 0.15); transition: background 0.3s ease;"
+                                                onmouseover="this.style.backgroundColor='rgba(201, 168, 76, 0.05)'"
+                                                onmouseout="this.style.backgroundColor='transparent'">
+                                                <td
+                                                    style="padding: 1.2rem 1rem; font-weight: 600; color: var(--navy); display: flex; align-items: center; gap: 0.8rem;">
+                                                    <span
+                                                        style="color: var(--gold); font-size: 0.8rem; font-weight: 700;">03</span>
+                                                    Corporate Representation
+                                                </td>
+                                                <td style="padding: 1.2rem 1rem; color: var(--text-dark);">Authorised
+                                                    representation at hearings, negotiations, industry forums</td>
+                                            </tr>
+                                            <tr style="border-bottom: 1px solid rgba(201, 168, 76, 0.15); transition: background 0.3s ease;"
+                                                onmouseover="this.style.backgroundColor='rgba(201, 168, 76, 0.05)'"
+                                                onmouseout="this.style.backgroundColor='transparent'">
+                                                <td
+                                                    style="padding: 1.2rem 1rem; font-weight: 600; color: var(--navy); display: flex; align-items: center; gap: 0.8rem;">
+                                                    <span
+                                                        style="color: var(--gold); font-size: 0.8rem; font-weight: 700;">04</span>
+                                                    Statutory Compliance Coordination
+                                                </td>
+                                                <td style="padding: 1.2rem 1rem; color: var(--text-dark);">MCA filings,
+                                                    labour law, import compliance, licence renewals</td>
+                                            </tr>
+                                            <tr style="transition: background 0.3s ease;"
+                                                onmouseover="this.style.backgroundColor='rgba(201, 168, 76, 0.05)'"
+                                                onmouseout="this.style.backgroundColor='transparent'">
+                                                <td
+                                                    style="padding: 1.2rem 1rem; font-weight: 600; color: var(--navy); display: flex; align-items: center; gap: 0.8rem;">
+                                                    <span
+                                                        style="color: var(--gold); font-size: 0.8rem; font-weight: 700;">05</span>
+                                                    Public Sector Procurement
+                                                </td>
+                                                <td style="padding: 1.2rem 1rem; color: var(--text-dark);">GeM, CPP
+                                                    Portal, tender support, CPWD/BHEL empanelment</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="svc-detail-panel">
                     <h4>Expertise</h4>
@@ -297,9 +556,18 @@
                         <p
                             style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7; margin-bottom: 2rem;">
                             Navigating complex regulatory landscapes with local knowledge.</p>
-                        <a href="contact.html" class="btn-partner"
-                            style="padding: 1rem 2rem; text-decoration: none; display: flex; justify-content: center;">Liaison
-                            Support</a>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="https://wa.me/919711118551" target="_blank" class="btn-partner"
+                                style="flex: 1; font-size: 0.85rem; padding: 0.8rem 0.3rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem;">
+                                <div><i class="fab fa-whatsapp"></i> WhatsApp</div>
+                                <div style="font-size: 0.6rem; opacity: 0.8;">Liaison Support</div>
+                            </a>
+                            <a href="mailto:info@exigencies.in" class="btn-partner"
+                                style="flex: 1; font-size: 0.85rem; padding: 0.8rem 0.3rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem; background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold);">
+                                <div><i class="fas fa-envelope"></i> Email</div>
+                                <div style="font-size: 0.6rem; opacity: 0.8;">Liaison Support</div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -313,7 +581,8 @@
 
                 <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;">
                     <span
-                        style="font-family: var(--font-heading); font-size: 6rem; font-weight: 300; color: rgba(201, 168, 76, 0.1); line-height: 1;">07</span>
+                        style="font-family: var(--font-heading); font-size: 6rem; font-weight: 300; color: rgba(201, 168, 76, 0.1); line-height: 1;">07
+                    </span>
                     <div>
                         <div
                             style="background: var(--accent-gold); color: var(--primary-color); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.2em; padding: 0.4rem 1.2rem; display: inline-block; margin-bottom: 1rem; border-radius: 4px;">
@@ -360,9 +629,18 @@
                             style="color: rgba(255, 255, 255, 0.5); font-size: 1rem; margin-bottom: 2rem; line-height: 1.7;">
                             Authorised distribution of precision dental implant systems across India's clinic and
                             hospital network.</p>
-                        <a href="contact.html" class="btn-partner"
-                            style="background: var(--accent-gold); color: var(--primary-color); font-size: 0.75rem; padding: 0.8rem 1.5rem; text-decoration: none;">Inquire
-                            Details</a>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="https://wa.me/919711118551" target="_blank" class="btn-partner"
+                                style="flex: 1; background: var(--accent-gold); color: var(--primary-color); font-size: 0.85rem; padding: 0.8rem 1rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem;">
+                                <div><i class="fab fa-whatsapp"></i> WhatsApp</div>
+                                <div style="font-size: 0.6rem; opacity: 0.8;">Inquire Details</div>
+                            </a>
+                            <a href="mailto:info@exigencies.in" class="btn-partner"
+                                style="flex: 1; background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold); font-size: 0.85rem; padding: 0.8rem 1rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem;">
+                                <div><i class="fas fa-envelope"></i> Email</div>
+                                <div style="font-size: 0.6rem; opacity: 0.8;">Inquire Details</div>
+                            </a>
+                        </div>
                     </div>
                 </div>
 

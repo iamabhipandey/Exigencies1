@@ -48,6 +48,12 @@
     margin-bottom: 1.5rem;
 }
 
+.terms-section-heading .main-display-title em {
+    vertical-align: baseline;
+    display: inline;
+    /* Overriding potential inline-block that causes vertical shifts */
+}
+
 .terms-section-heading .section-subtitle {
     max-width: 800px;
     margin: 0 auto;
