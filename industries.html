@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="industries.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -23,240 +24,46 @@
 
     <!-- Modern Parallax Hero Section -->
     <section class="about-hero-modern">
-        <div class="parallax-bg" style="background-image: url('about_theme.png');"></div>
+        <div class="parallax-bg ind-custom-style-1"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-container">
             <div class="hero-content-modern text-center">
                 <span class="eyebrow-text reveal">Global Industries · Indian Focus</span>
-                <h1 class="reveal" style="font-size: 4rem;">Industries We Serve</h1>
+                <h1 class="reveal ind-custom-style-2">Industries We Serve</h1>
             </div>
         </div>
     </section>
 
-    <style>
-        .industries-detail-section {
-            background-color: var(--navy);
-            background-image: linear-gradient(rgba(27, 42, 74, 0.95), rgba(27, 42, 74, 0.95)), url('about_theme.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--white);
-            overflow: hidden;
-            padding: 4rem 0;
-            position: relative;
-        }
 
-        .ind-item-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-            padding: 5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
 
-        .ind-item-row:last-child {
-            border-bottom: none;
-        }
-
-        .ind-item-row:nth-child(even) .ind-item-text {
-            order: 2;
-        }
-
-        .ind-item-row:nth-child(even) .ind-item-visual {
-            order: 1;
-        }
-
-        .ind-item-text .section-label {
-            font-family: var(--font-body);
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .ind-item-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--white);
-            line-height: 1.1;
-        }
-
-        .ind-item-text h2 em {
-            color: var(--gold);
-            font-style: italic;
-        }
-
-        .ind-item-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 2.5rem;
-        }
-
-        .ind-feature-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .ind-feature-list li {
-            font-size: 1rem;
-            margin-bottom: 1.2rem;
-            padding-left: 2.5rem;
-            position: relative;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .ind-feature-list li::before {
-            content: "\f00c";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            top: 4px;
-            color: var(--gold);
-            font-size: 0.9rem;
-        }
-
-        .ind-feature-list li.no-icon::before {
-            content: none;
-        }
-
-        .ind-feature-list li.no-icon {
-            padding-left: 1.5rem;
-        }
-
-        .ind-item-visual {
-            position: relative;
-        }
-
-        .ind-img-wrapper {
-            width: 100%;
-            height: 550px;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
-            position: relative;
-            z-index: 2;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .ind-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-
-        .ind-item-row:hover .ind-img-wrapper img {
-            transform: scale(1.08);
-        }
-
-        .visual-accent {
-            position: absolute;
-            width: 180px;
-            height: 180px;
-            border: 2px solid var(--gold);
-            z-index: 1;
-            opacity: 0.2;
-            transition: all 0.6s ease;
-        }
-
-        .ind-item-row:hover .visual-accent {
-            opacity: 0.5;
-            transform: translate(10px, 10px);
-        }
-
-        .accent-top-right {
-            top: -40px;
-            right: -40px;
-        }
-
-        .accent-bottom-left {
-            bottom: -40px;
-            left: -40px;
-        }
-
-        .vertical-badge {
-            position: absolute;
-            top: 2rem;
-            left: 2rem;
-            background: var(--gold);
-            color: var(--navy);
-            font-size: 0.7rem;
-            font-weight: 800;
-            letter-spacing: 0.15em;
-            padding: 0.6rem 1.4rem;
-            border-radius: 6px;
-            z-index: 3;
-            text-transform: uppercase;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 991px) {
-            .ind-item-row {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-                padding: 6rem 0;
-            }
-
-            .ind-item-row:nth-child(even) .ind-item-text {
-                order: 1;
-            }
-
-            .ind-item-row:nth-child(even) .ind-item-visual {
-                order: 2;
-            }
-
-            .ind-img-wrapper {
-                height: 400px;
-            }
-
-            .ind-item-text h2 {
-                font-size: 2.2rem;
-            }
-
-            .visual-accent {
-                display: none;
-            }
-        }
-    </style>
-
-    <section class="about-style-industry"
-        style="padding: 8rem 0; background-color: var(--background-light); position: relative; overflow: hidden;">
+    <section class="about-style-industry ind-custom-style-3">
         <div class="container about-grid-container">
             <div class="about-content-side">
                 <h3 class="subsection-tagline">Industry Sector 01</h3>
-                <h2 class="section-title"
-                    style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.8rem; line-height: 1.15;">
+                <h2 class="section-title ind-custom-style-4">
                     Cosmetics — <em>K-Beauty</em>
                 </h2>
                 <div class="about-main-text">
-                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 2rem;">
+                    <p class="ind-custom-style-5">
                         Bridging the gap between South Korean innovation and Indian retail. Through our vertical
                         <strong>Loche India</strong>, we are the exclusive authorised wholesaler for premium brands
                         via <em>bellaluna.in</em>.
                     </p>
 
-                    <ul class="ind-feature-list" style="color: var(--text-dark); margin-bottom: 2.5rem;">
-                        <li style="color: var(--text-dark);">Exclusive distribution: GLOSSYS, BREIL, CUREST</li>
-                        <li style="color: var(--text-dark);">B2B onboarding for retail chains, salons, and spas</li>
-                        <li style="color: var(--text-dark);">Complete CDSCO and BIS import compliance management</li>
-                        <li style="color: var(--text-dark);">Digital marketing and brand localization strategies</li>
-                        <li class="no-icon"
-                            style="color: var(--text-dark); background: rgba(201, 168, 76, 0.08); padding: 1.2rem 1.2rem 1.2rem 1.5rem; border-left: 5px solid var(--gold); border-radius: 0 12px 12px 0; margin-top: 1.5rem; transition: all 0.3s ease; font-weight: 500;">
+                    <ul class="ind-feature-list ind-custom-style-6">
+                        <li class="ind-custom-style-7">Exclusive distribution: GLOSSYS, BREIL, CUREST</li>
+                        <li class="ind-custom-style-7">B2B onboarding for retail chains, salons, and spas</li>
+                        <li class="ind-custom-style-7">Complete CDSCO and BIS import compliance management</li>
+                        <li class="ind-custom-style-7">Digital marketing and brand localization strategies</li>
+                        <li class="no-icon ind-custom-style-8">
                             <strong>B] Providing consultancy services</strong> for OEM/ODM/ OBM / OPM to Indian
                             manufacturers and startups
                         </li>
                     </ul>
 
-                    <div class="about-cta" style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <a href="https://bellaluna.in" target="_blank" class="btn btn-primary"
-                            style="padding: 15px 40px; display: inline-block; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; background: var(--primary-color); color: white; text-decoration: none; border-radius: 4px;">Visit
-                            Bellaluna.in <i class="fas fa-external-link-alt" style="margin-left: 0.8rem;"></i></a>
+                    <div class="about-cta ind-custom-style-9">
+                        <a href="https://bellaluna.in" target="_blank" class="btn btn-primary ind-custom-style-10">Visit
+                            Bellaluna.in <i class="fas fa-external-link-alt ind-custom-style-11"></i></a>
                     </div>
                 </div>
             </div>
@@ -264,7 +71,7 @@
                 <div class="about-image-wrapper">
                     <img src="images/k_beauty_cosmetics.png" alt="Loche India Channel Partner"
                         class="about-premium-img">
-                    <div class="about-experience-badge" style="right: auto; left: -30px; border-radius: 50% 50% 0 50%;">
+                    <div class="about-experience-badge ind-custom-style-12">
                         <span class="badge-number">Direct</span>
                         <span class="badge-text">Authorised Partner</span>
                     </div>
@@ -281,8 +88,7 @@
                 <div class="ind-item-text">
                     <span class="section-label">Industry Sector 02</span>
                     <h2>Medical Implants & <em>Equipment</em></h2>
-                    <!-- <span
-                        style="display: block; font-size: 13px; font-weight: 600; text-transform: uppercase; color: var(--gold); letter-spacing: 2px; margin-top: -10px; margin-bottom: 20px; opacity: 0.9;">
+                    <!-- <span class="ind-custom-style-13">
                         Channel Partner to Loche India
                     </span> -->
                     <p>Exigencies specializes in <strong>partnering with global brands and manufacturers of medical
@@ -419,28 +225,110 @@
                 </div>
             </div>
 
+            <!-- 08 Government Contractors & Suppliers Box -->
+            <div class="reveal ind-custom-style-14">
+                <!-- Decorative background elements -->
+                <div class="ind-custom-style-15">
+                </div>
+                <div class="ind-custom-style-16">
+                </div>
+
+                <div class="ind-custom-style-17">
+                    <span class="section-label ind-custom-style-18">Industry
+                        Sector 08</span>
+                    <h2 class="ind-custom-style-19">
+                        Government Contractors & <em>Suppliers</em></h2>
+
+                    <div class="ind-custom-style-20">
+                        <div class="ind-custom-style-21">
+                            <h4 class="ind-custom-style-22">
+                                GeM Portal</h4>
+                            <p class="ind-custom-style-23">
+                                Direct Purchase, Bid/Reverse Auction, Custom Bid, manufacturer representation on GeM;
+                                buying organisations panel</p>
+                        </div>
+                        <div class="ind-custom-style-21">
+                            <h4 class="ind-custom-style-22">
+                                Tenders & Rate Contracts</h4>
+                            <p class="ind-custom-style-23">
+                                CPPP, state portals, PSU-specific portals; full tender participation services list</p>
+                        </div>
+                    </div>
+
+                    <div class="ind-custom-style-24">
+                        <h4 class="ind-custom-style-25">
+                            Empanelment & Registration</h4>
+                        <div class="ind-custom-style-26">
+                            <div class="ind-custom-style-27"
+                                onmouseover="this.style.background='rgba(201,168,76,0.2)'; this.style.transform='translateY(-3px)'"
+                                onmouseout="this.style.background='rgba(201,168,76,0.1)'; this.style.transform='translateY(0)'">
+                                GeM</div>
+                            <div class="ind-custom-style-27"
+                                onmouseover="this.style.background='rgba(201,168,76,0.2)'; this.style.transform='translateY(-3px)'"
+                                onmouseout="this.style.background='rgba(201,168,76,0.1)'; this.style.transform='translateY(0)'">
+                                DGS&D</div>
+                            <div class="ind-custom-style-27"
+                                onmouseover="this.style.background='rgba(201,168,76,0.2)'; this.style.transform='translateY(-3px)'"
+                                onmouseout="this.style.background='rgba(201,168,76,0.1)'; this.style.transform='translateY(0)'">
+                                PSU Vendor</div>
+                            <div class="ind-custom-style-27"
+                                onmouseover="this.style.background='rgba(201,168,76,0.2)'; this.style.transform='translateY(-3px)'"
+                                onmouseout="this.style.background='rgba(201,168,76,0.1)'; this.style.transform='translateY(0)'">
+                                MSME/Udyam</div>
+                            <div class="ind-custom-style-27"
+                                onmouseover="this.style.background='rgba(201,168,76,0.2)'; this.style.transform='translateY(-3px)'"
+                                onmouseout="this.style.background='rgba(201,168,76,0.1)'; this.style.transform='translateY(0)'">
+                                State Empanelment</div>
+                            <div class="ind-custom-style-27"
+                                onmouseover="this.style.background='rgba(201,168,76,0.2)'; this.style.transform='translateY(-3px)'"
+                                onmouseout="this.style.background='rgba(201,168,76,0.1)'; this.style.transform='translateY(0)'">
+                                Manufacturer Representation</div>
+                        </div>
+                    </div>
+
+                    <div class="ind-custom-style-28">
+                        <div class="ind-custom-style-21">
+                            <h4 class="ind-custom-style-22">
+                                Product & Service Categories</h4>
+                            <p class="ind-custom-style-23">
+                                <strong class="ind-custom-style-29">Goods:</strong> food, office, IT, PPE, medical,
+                                construction<br><strong class="ind-custom-style-30">Services:</strong>
+                                AMC, housekeeping, uniform, printing
+                            </p>
+                        </div>
+                        <div class="ind-custom-style-21">
+                            <h4 class="ind-custom-style-22">
+                                Compliance & Documentation</h4>
+                            <p class="ind-custom-style-23">
+                                GST, MSME, OEM authorisation, Make in India, EMD/performance guarantee, audit support
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Why Choose Us Component -->
-            <div class="why-choose-us-industries reveal" style="margin: 3rem 0 4rem;">
-                <div class="section-header text-center" style="margin-bottom: 5rem;">
+            <div class="why-choose-us-industries reveal ind-custom-style-31">
+                <div class="section-header text-center ind-custom-style-32">
                     <span class="section-label">Our Advantage</span>
-                    <h2 style="font-size: 3rem; color: var(--white); margin-bottom: 1.5rem;">What Sets Exigencies
+                    <h2 class="ind-custom-style-33">What Sets Exigencies
                         Mercantile <em>Apart</em></h2>
-                    <p style="color: rgba(255,255,255,0.6); max-width: 800px; margin: 0 auto;">In a market as complex
+                    <p class="ind-custom-style-34">In a market as complex
                         and dynamic as India, the quality of your local partner determines the quality of your outcomes.
                         We offer a combination of capabilities, values, and experience that is genuinely differentiated.
                     </p>
                 </div>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem;">
+                <div class="ind-custom-style-35">
                     <!-- Advantage 01 -->
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; border-radius: 20px; transition: all 0.4s ease;"
+                    <div class="ind-custom-style-36"
                         onmouseover="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--gold)'"
                         onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'">
-                        <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 2rem;"><i
+                        <div class="ind-custom-style-37"><i
                                 class="fas fa-network-wired"></i></div>
-                        <h4 style="font-size: 1.4rem; color: var(--white); margin-bottom: 1.5rem; font-weight: 600;">
+                        <h4 class="ind-custom-style-38">
                             Single-Window Strategic Partner</h4>
-                        <p style="color: rgba(255,255,255,0.6); line-height: 1.7; font-size: 1rem;">India's business
+                        <p class="ind-custom-style-39">India's business
                             environment involves multiple stakeholders, authorities, and regulatory frameworks. We
                             consolidate this complexity into a single, accountable partnership — providing integrated
                             market-entry, representation, trading, compliance, and industrial solutions under one
@@ -448,14 +336,14 @@
                     </div>
 
                     <!-- Advantage 02 -->
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; border-radius: 20px; transition: all 0.4s ease;"
+                    <div class="ind-custom-style-36"
                         onmouseover="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--gold)'"
                         onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'">
-                        <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 2rem;"><i
+                        <div class="ind-custom-style-37"><i
                                 class="fas fa-shield-halved"></i></div>
-                        <h4 style="font-size: 1.4rem; color: var(--white); margin-bottom: 1.5rem; font-weight: 600;">
+                        <h4 class="ind-custom-style-38">
                             Compliance-Driven Operations</h4>
-                        <p style="color: rgba(255,255,255,0.6); line-height: 1.7; font-size: 1rem;">Regulatory
+                        <p class="ind-custom-style-39">Regulatory
                             non-compliance is the single greatest risk in India. We have built compliance into the DNA
                             of our operations. From GST and import regulations to CDSCO medical device approvals and
                             FSSAI compliance, every engagement is fully aligned with all applicable statutory
@@ -463,14 +351,14 @@
                     </div>
 
                     <!-- Advantage 03 -->
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; border-radius: 20px; transition: all 0.4s ease;"
+                    <div class="ind-custom-style-36"
                         onmouseover="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--gold)'"
                         onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'">
-                        <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 2rem;"><i
+                        <div class="ind-custom-style-37"><i
                                 class="fas fa-globe-asia"></i></div>
-                        <h4 style="font-size: 1.4rem; color: var(--white); margin-bottom: 1.5rem; font-weight: 600;">
+                        <h4 class="ind-custom-style-38">
                             Local Intelligence, Global Standards</h4>
-                        <p style="color: rgba(255,255,255,0.6); line-height: 1.7; font-size: 1rem;">Effective market
+                        <p class="ind-custom-style-39">Effective market
                             entry requires deep local intelligence — regional dynamics, regulatory nuances, and cultural
                             considerations. We combine on-the-ground expertise with internationally recognised business
                             governance standards, ensuring you benefit from local know-how without sacrificing rigour.
@@ -478,28 +366,28 @@
                     </div>
 
                     <!-- Advantage 04 -->
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; border-radius: 20px; transition: all 0.4s ease;"
+                    <div class="ind-custom-style-36"
                         onmouseover="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--gold)'"
                         onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'">
-                        <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 2rem;"><i
+                        <div class="ind-custom-style-37"><i
                                 class="fas fa-gears"></i></div>
-                        <h4 style="font-size: 1.4rem; color: var(--white); margin-bottom: 1.5rem; font-weight: 600;">
+                        <h4 class="ind-custom-style-38">
                             Structured Execution Model</h4>
-                        <p style="color: rgba(255,255,255,0.6); line-height: 1.7; font-size: 1rem;">We operate through a
+                        <p class="ind-custom-style-39">We operate through a
                             defined, phased engagement model — from initial assessment through strategy, setup, launch,
                             and scale. Roles are clearly defined, timelines are established, and progress is tracked
                             against measurable milestones, ensuring full visibility and accountability.</p>
                     </div>
 
                     <!-- Advantage 05 -->
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; border-radius: 20px; transition: all 0.4s ease;"
+                    <div class="ind-custom-style-36"
                         onmouseover="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--gold)'"
                         onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'">
-                        <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 2rem;"><i
+                        <div class="ind-custom-style-37"><i
                                 class="fas fa-handshake"></i></div>
-                        <h4 style="font-size: 1.4rem; color: var(--white); margin-bottom: 1.5rem; font-weight: 600;">
+                        <h4 class="ind-custom-style-38">
                             Strong Distribution Network</h4>
-                        <p style="color: rgba(255,255,255,0.6); line-height: 1.7; font-size: 1rem;">We maintain
+                        <p class="ind-custom-style-39">We maintain
                             established relationships with a broad network of suppliers, distributors, logistics
                             providers, and regulatory consultants across India. This network enables faster execution,
                             competitive sourcing, and better outcomes — advantages that would take years to build
@@ -507,14 +395,14 @@
                     </div>
 
                     <!-- Advantage 06 -->
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; border-radius: 20px; transition: all 0.4s ease;"
+                    <div class="ind-custom-style-36"
                         onmouseover="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--gold)'"
                         onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'">
-                        <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 2rem;"><i
+                        <div class="ind-custom-style-37"><i
                                 class="fas fa-chart-line"></i></div>
-                        <h4 style="font-size: 1.4rem; color: var(--white); margin-bottom: 1.5rem; font-weight: 600;">
+                        <h4 class="ind-custom-style-38">
                             Long-Term Partnership Mindset</h4>
-                        <p style="color: rgba(255,255,255,0.6); line-height: 1.7; font-size: 1rem;">Our model and
+                        <p class="ind-custom-style-39">Our model and
                             culture are aligned around long-term value creation. We invest deeply in understanding your
                             business, align our objectives with your strategic goals, and build engagements designed to
                             scale sustainably. Our success is measured by your growth.</p>
@@ -523,14 +411,11 @@
             </div>
 
             <!-- Final Promise Strip -->
-            <div class="promise-strip-modern reveal"
-                style="margin: 3rem 0; background: linear-gradient(135deg, var(--gold) 0%, #b89640 100%); padding: 4rem 1.5rem; border-radius: 40px; text-align: center; color: var(--navy); box-shadow: 0 40px 80px rgba(0,0,0,0.2);">
-                <h2
-                    style="font-family: var(--font-heading); font-size: 2.8rem; margin-bottom: 2.5rem; font-weight: 600; line-height: 1.2;">
+            <div class="promise-strip-modern reveal ind-custom-style-40">
+                <h2 class="ind-custom-style-41">
                     We <em>protect</em> your brand. We <em>build</em> your market.<br>We <em>deliver</em> your growth.
                 </h2>
-                <a href="partner-with-us.html" class="btn btn-primary"
-                    style="background: var(--navy); color: var(--gold); padding: 20px 60px; border-radius: 60px; font-weight: 800; border: none; font-size: 1.1rem; box-shadow: 0 15px 35px rgba(0,0,0,0.3); text-decoration: none; display: inline-block;">Start
+                <a href="partner-with-us.html" class="btn btn-primary ind-custom-style-42">Start
                     a Strategic Partnership</a>
             </div>
         </div>

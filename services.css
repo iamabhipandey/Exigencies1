@@ -1,0 +1,506 @@
+/* ==========================================================================
+   SERVICES PAGE STYLES
+   ========================================================================== */
+
+/* Legal Accordion Styling */
+.legal-accordion {
+    margin-top: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-item {
+    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.accordion-header:hover {
+    background: rgba(201, 168, 76, 0.05);
+}
+
+.accordion-item.active .accordion-header {
+    background: rgba(201, 168, 76, 0.08);
+}
+
+.header-num {
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-right: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    width: 25px;
+}
+
+.header-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+.header-icon {
+    color: var(--accent-gold);
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.accordion-item.active .header-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 2000px;
+}
+
+.content-inner {
+    padding: 0 2rem 2rem 5.5rem;
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Regulatory Grid */
+.regulatory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.reg-pill {
+    background: var(--background-alt);
+    border: 1px solid rgba(201, 168, 76, 0.1);
+    padding: 0.6rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.reg-pill:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+    background: white;
+    box-shadow: 0 5px 15px rgba(201, 168, 76, 0.1);
+}
+
+/* SERVICE DETAIL LAYOUT */
+.svc-detail {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 4rem;
+    align-items: start;
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.svc-detail:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.svc-detail:nth-child(even) {
+    background-color: rgba(15, 23, 42, 0.02);
+    margin-left: -100vw;
+    margin-right: -100vw;
+    padding-left: 100vw;
+    padding-right: 100vw;
+    padding-top: 5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.svc-detail-num {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    font-weight: 300;
+    color: rgba(201, 168, 76, 0.4);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.svc-detail h3 {
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--navy);
+}
+
+.svc-detail-panel {
+    background: var(--primary-color);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    color: var(--white);
+    position: sticky;
+    top: 120px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+}
+
+.svc-detail-panel h4 {
+    color: var(--accent-gold);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.svc-tag-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(201, 168, 76, 0.2);
+    margin-top: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.svc-tag-item {
+    background: var(--primary-color);
+    padding: 1rem;
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+ul.styled {
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+ul.styled li {
+    font-size: 1rem;
+    color: var(--text-dark);
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 1rem;
+    line-height: 1.6;
+}
+
+ul.styled li::before {
+    content: '→';
+    color: var(--accent-gold);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.gold-rule {
+    width: 60px;
+    height: 3px;
+    background: var(--accent-gold);
+    margin: 1.5rem 0;
+}
+
+@media (max-width: 991px) {
+    .svc-detail {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .svc-detail-panel {
+        position: relative;
+        top: 0;
+    }
+}
+
+/* Extracted Inline Styles */
+.svc-custom-style-1 {
+    background-image: url('services_theme.png');
+}
+
+.svc-custom-style-2 {
+    padding: 4rem 0; background-color: var(--background-alt); position: relative; overflow: hidden;
+}
+
+.svc-custom-style-3 {
+    gap: 5rem; align-items: center; margin-bottom: 3rem;
+}
+
+.svc-custom-style-4 {
+    color: var(--accent-gold); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; display: block;
+}
+
+.svc-custom-style-5 {
+    margin-bottom: 2rem; font-size: 2.8rem; line-height: 1.2;
+}
+
+.svc-custom-style-6 {
+    width: 60px; height: 3px; background-color: var(--accent-gold); margin-bottom: 2rem;
+}
+
+.svc-custom-style-7 {
+    font-size: 1.1rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1.5rem;
+}
+
+.svc-custom-style-8 {
+    font-size: 1.1rem; line-height: 1.8; color: var(--text-dark);
+}
+
+.svc-custom-style-9 {
+    position: relative;
+}
+
+.svc-custom-style-10 {
+    position: absolute; top: -20px; right: -20px; width: 120px; height: 120px; border-top: 4px solid var(--accent-gold); border-right: 4px solid var(--accent-gold); z-index: 0; opacity: 0.5;
+}
+
+.svc-custom-style-11 {
+    width: 100%; height: 550px; object-fit: cover; border-radius: 16px; position: relative; z-index: 1; box-shadow: 25px 25px 50px rgba(0,0,0,0.15);
+}
+
+.svc-custom-style-12 {
+    position: absolute; bottom: -20px; left: -20px; width: 120px; height: 120px; border-bottom: 4px solid var(--primary-color); border-left: 4px solid var(--primary-color); z-index: 0; opacity: 0.5;
+}
+
+.svc-custom-style-13 {
+    padding: 4rem 0; background-color: var(--background-alt);
+}
+
+.svc-custom-style-14 {
+    font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 2rem;
+}
+
+.svc-custom-style-15 {
+    margin-top: 1rem; border-top: 1px dashed rgba(201, 168, 76, 0.3); padding-top: 1.5rem; font-weight: 500;
+}
+
+.svc-custom-style-16 {
+    margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.svc-custom-style-17 {
+    font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7; margin-bottom: 2rem;
+}
+
+.svc-custom-style-18 {
+    padding: 1rem 2rem; text-decoration: none; display: flex; justify-content: center;
+}
+
+.svc-custom-style-19 {
+    background: rgba(15,23,42,0.03); padding: 2rem; border-radius: 12px; margin-bottom: 2rem;
+}
+
+.svc-custom-style-20 {
+    color: var(--navy); font-size: 1.1rem; margin-bottom: 1.5rem; text-align: center;
+}
+
+.svc-custom-style-21 {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; position: relative;
+}
+
+.svc-custom-style-22 {
+    position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: rgba(201,168,76,0.3); z-index: 1;
+}
+
+.svc-custom-style-23 {
+    background: var(--navy); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; position: relative; z-index: 2; border: 3px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.svc-custom-style-24 {
+    background: var(--accent-gold); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; position: relative; z-index: 2; border: 3px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.svc-custom-style-25 {
+    display: flex; gap: 1rem;
+}
+
+.svc-custom-style-26 {
+    flex: 1; font-size: 0.85rem; padding: 0.8rem 0.3rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem;
+}
+
+.svc-custom-style-27 {
+    font-size: 0.6rem; opacity: 0.8;
+}
+
+.svc-custom-style-28 {
+    flex: 1; font-size: 0.85rem; padding: 0.8rem 0.3rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem; background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold);
+}
+
+.svc-custom-style-29 {
+    font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1rem; margin-top: 2rem;
+}
+
+.svc-custom-style-30 {
+    color: var(--navy); font-weight: 700;
+}
+
+.svc-custom-style-31 {
+    font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1rem;
+}
+
+.svc-custom-style-32 {
+    margin-top: 3.5rem; padding: 2rem; background: rgba(15,23,42,0.03); border-left: 4px solid var(--accent-gold); border-radius: 0 16px 16px 0; margin-bottom: 2rem;
+}
+
+.svc-custom-style-33 {
+    color: var(--navy); margin-bottom: 1.5rem; font-size: 1.15rem;
+}
+
+.svc-custom-style-34 {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+}
+
+.svc-custom-style-35 {
+    background: white; padding: 1rem 0.5rem; text-align: center; border-radius: 8px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.04); color: var(--navy); border-bottom: 2px solid var(--navy);
+}
+
+.svc-custom-style-36 {
+    margin-top: 2.5rem;
+}
+
+.svc-custom-style-37 {
+    padding: 1rem 2rem 2rem 2rem; overflow-x: auto;
+}
+
+.svc-custom-style-38 {
+    width: 100%; border-collapse: collapse; text-align: left; min-width: 600px;
+}
+
+.svc-custom-style-39 {
+    padding: 1.2rem 1rem; border-bottom: 2px solid var(--accent-gold); color: var(--primary-color); font-family: var(--font-heading); font-size: 1.1rem; width: 40%;
+}
+
+.svc-custom-style-40 {
+    padding: 1.2rem 1rem; border-bottom: 2px solid var(--accent-gold); color: var(--primary-color); font-family: var(--font-heading); font-size: 1.1rem; width: 60%;
+}
+
+.svc-custom-style-41 {
+    border-bottom: 1px solid rgba(201, 168, 76, 0.15); transition: background 0.3s ease;
+}
+
+.svc-custom-style-42 {
+    padding: 1.2rem 1rem; font-weight: 600; color: var(--navy); display: flex; align-items: center; gap: 0.8rem;
+}
+
+.svc-custom-style-43 {
+    color: var(--gold); font-size: 0.8rem; font-weight: 700;
+}
+
+.svc-custom-style-44 {
+    padding: 1.2rem 1rem; color: var(--text-dark);
+}
+
+.svc-custom-style-45 {
+    padding: 1.2rem 1rem; font-weight: 600; color: var(--navy); display: flex; align-items: flex-start; gap: 0.8rem;
+}
+
+.svc-custom-style-46 {
+    color: var(--gold); font-size: 0.8rem; font-weight: 700; margin-top: 5px;
+}
+
+.svc-custom-style-47 {
+    margin-top: 0.8rem; justify-content: flex-start; gap: 0.5rem;
+}
+
+.svc-custom-style-48 {
+    padding: 0.4rem 0.6rem; font-size: 0.7rem;
+}
+
+.svc-custom-style-49 {
+    transition: background 0.3s ease;
+}
+
+.svc-custom-style-50 {
+    background: var(--primary-color); padding: 5rem; border-radius: 40px; margin-top: 8rem; position: relative; overflow: hidden; box-shadow: var(--shadow-xl);
+}
+
+.svc-custom-style-51 {
+    position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary-color), var(--accent-gold), var(--primary-color));
+}
+
+.svc-custom-style-52 {
+    display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;
+}
+
+.svc-custom-style-53 {
+    font-family: var(--font-heading); font-size: 6rem; font-weight: 300; color: rgba(201, 168, 76, 0.1); line-height: 1;
+}
+
+.svc-custom-style-54 {
+    background: var(--accent-gold); color: var(--primary-color); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.2em; padding: 0.4rem 1.2rem; display: inline-block; margin-bottom: 1rem; border-radius: 4px;
+}
+
+.svc-custom-style-55 {
+    color: var(--white); margin: 0; font-size: 2.8rem;
+}
+
+.svc-custom-style-56 {
+    color: rgba(255, 255, 255, 0.7); font-size: 1.25rem; margin-bottom: 3.5rem; max-width: 900px; line-height: 1.8;
+}
+
+.svc-custom-style-57 {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
+}
+
+.svc-custom-style-58 {
+    background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 3rem; border-radius: 20px; transition: transform 0.3s ease;
+}
+
+.svc-custom-style-59 {
+    font-family: var(--font-body); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 1rem;
+}
+
+.svc-custom-style-60 {
+    color: var(--white); font-size: 1.5rem; margin-bottom: 1.5rem;
+}
+
+.svc-custom-style-61 {
+    color: rgba(255, 255, 255, 0.5); font-size: 1rem; margin-bottom: 2rem; line-height: 1.7;
+}
+
+.svc-custom-style-62 {
+    background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold); font-size: 0.75rem; padding: 0.8rem 1.5rem; text-decoration: none;
+}
+
+.svc-custom-style-63 {
+    flex: 1; background: var(--accent-gold); color: var(--primary-color); font-size: 0.85rem; padding: 0.8rem 1rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem;
+}
+
+.svc-custom-style-64 {
+    flex: 1; background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold); font-size: 0.85rem; padding: 0.8rem 1rem; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem;
+}
+
+.svc-custom-style-65 {
+    margin-top: 4rem; text-align: center;
+}
+
+.svc-custom-style-66 {
+    padding: 1.2rem 3rem !important; font-size: 0.9rem !important;
+}
+
+.svc-custom-style-67 {
+    margin-left: 10px;
+}
