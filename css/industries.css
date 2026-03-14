@@ -4,7 +4,7 @@
 
 .industries-detail-section {
     background-color: var(--navy);
-    background-image: linear-gradient(rgba(27, 42, 74, 0.95), rgba(27, 42, 74, 0.95)), url('about_theme.png');
+    background-image: linear-gradient(rgba(27, 42, 74, 0.95), rgba(27, 42, 74, 0.95)), url('../images/about_theme.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -194,7 +194,7 @@
 
 /* Extracted Inline Styles */
 .ind-custom-style-1 {
-    background-image: url('about_theme.png');
+    background-image: url('../images/about_theme.png');
 }
 
 .ind-custom-style-2 {

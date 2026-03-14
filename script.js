@@ -2,12 +2,18 @@
 async function loadComponents() {
     const headerPlaceholder = document.getElementById('header-placeholder');
     const footerPlaceholder = document.getElementById('footer-placeholder');
+    
+    const isInsidePages = window.location.pathname.includes('/pages/');
+    const basePath = isInsidePages ? '../' : '';
 
     if (headerPlaceholder) {
         try {
-            const response = await fetch('components/header.html');
+            const response = await fetch(basePath + 'components/header.html');
             const data = await response.text();
             headerPlaceholder.innerHTML = data;
+            
+            // Fix links and images in header
+            fixComponentPaths(headerPlaceholder, isInsidePages);
         } catch (error) {
             console.error('Error loading header:', error);
         }
@@ -15,9 +21,12 @@ async function loadComponents() {
 
     if (footerPlaceholder) {
         try {
-            const response = await fetch('components/footer.html');
+            const response = await fetch(basePath + 'components/footer.html');
             const data = await response.text();
             footerPlaceholder.innerHTML = data;
+            
+            // Fix links and images in footer
+            fixComponentPaths(footerPlaceholder, isInsidePages);
         } catch (error) {
             console.error('Error loading footer:', error);
         }
@@ -25,6 +34,47 @@ async function loadComponents() {
 
     // Initialize UI elements that depend on components
     initUI();
+}
+
+function fixComponentPaths(container, isInsidePages) {
+    const links = container.querySelectorAll('a');
+    const images = container.querySelectorAll('img');
+
+    links.forEach(link => {
+        let href = link.getAttribute('href');
+        if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+
+        // Hashes should be preserved but potentially prefixed
+        if (href.startsWith('#')) {
+            // If we are deep and this is a hash on the same page, it's fine.
+            // But if it was originally intended for index.html, we might need ../index.html#hash
+            // However, usually these hashes are for the current page.
+            return;
+        }
+
+        if (isInsidePages) {
+            // From /pages/about.html
+            if (href === 'index.html' || href.startsWith('index.html#')) {
+                link.setAttribute('href', '../' + href);
+            } else if (href.endsWith('.html') && !href.includes('/')) {
+                // Stay same (both in pages/)
+            }
+        } else {
+            // From index.html at root
+            if (href !== 'index.html' && href.endsWith('.html') && !href.startsWith('pages/')) {
+                link.setAttribute('href', 'pages/' + href);
+            } else if (href.startsWith('index.html#')) {
+                // Stay same
+            }
+        }
+    });
+
+    images.forEach(img => {
+        let src = img.getAttribute('src');
+        if (src && !src.startsWith('http') && isInsidePages) {
+            img.setAttribute('src', '../' + src);
+        }
+    });
 }
 
 function initUI() {

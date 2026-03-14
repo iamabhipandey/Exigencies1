@@ -238,7 +238,7 @@ ul.styled li::before {
 
 /* Extracted Inline Styles */
 .svc-custom-style-1 {
-    background-image: url('services_theme.png');
+    background-image: url('../images/services_theme.png');
 }
 
 .svc-custom-style-2 {

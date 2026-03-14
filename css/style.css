@@ -5107,7 +5107,7 @@ h6 {
 /* Industries Section Refined */
 #industries {
     background-color: var(--navy);
-    background-image: linear-gradient(rgba(15, 29, 58, 0.93), rgba(15, 29, 58, 0.93)), url('about_theme.png');
+    background-image: linear-gradient(rgba(15, 29, 58, 0.93), rgba(15, 29, 58, 0.93)), url('../images/about_theme.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

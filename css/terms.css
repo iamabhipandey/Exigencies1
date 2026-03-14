@@ -9,7 +9,7 @@
 }
 
 .terms-hero .parallax-bg {
-    background-image: url('about_theme.png');
+    background-image: url('../images/about_theme.png');
     opacity: 0.15;
     position: absolute;
     inset: 0;
