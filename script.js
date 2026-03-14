@@ -34,12 +34,15 @@ function initUI() {
 
     if (menuToggle && navList) {
         menuToggle.addEventListener('click', () => {
-            navList.classList.toggle('active');
-            const icon = menuToggle.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
-            }
+            navList.classList.add('active');
+        });
+    }
+
+    // Handle closing the sidebar directly from the new close icon interior
+    const menuCloseBtn = document.getElementById('mobile-menu-close');
+    if (menuCloseBtn && navList) {
+        menuCloseBtn.addEventListener('click', () => {
+            navList.classList.remove('active');
         });
     }
 
@@ -52,11 +55,6 @@ function initUI() {
             // Close mobile menu on any link click
             if (navList && navList.classList.contains('active')) {
                 navList.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                if (icon) {
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-times');
-                }
             }
 
             // Check if it's an anchor link to the current page
