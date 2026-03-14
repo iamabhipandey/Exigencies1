@@ -721,7 +721,7 @@ h6 {
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: 85vh;
     background: var(--navy);
     position: relative;
     display: flex;
@@ -805,7 +805,7 @@ h6 {
 .hero-content {
     position: relative;
     z-index: 2;
-    padding: 0 60px;
+    padding: 0 50px;
     max-width: 780px;
 }
 
@@ -813,7 +813,7 @@ h6 {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
     opacity: 0;
     animation: fadeUpHero 0.8s ease 0.2s forwards;
 }
@@ -834,11 +834,11 @@ h6 {
 
 .hero h1 {
     font-family: var(--font-heading);
-    font-size: clamp(52px, 7vw, 88px);
+    font-size: clamp(40px, 6vw, 72px);
     font-weight: 300;
     color: var(--white);
     line-height: 1.05;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
     opacity: 0;
     animation: fadeUpHero 0.9s ease 0.4s forwards;
     letter-spacing: -0.02em;
@@ -851,12 +851,12 @@ h6 {
 }
 
 .hero-desc {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.7;
     max-width: 520px;
-    margin-bottom: 48px;
+    margin-bottom: 30px;
     opacity: 0;
     animation: fadeUpHero 0.9s ease 0.6s forwards;
 }
@@ -865,7 +865,7 @@ h6 {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    margin-top: 40px;
+    margin-top: 30px;
     opacity: 0;
     animation: fadeUpHero 0.9s ease 0.8s forwards;
 }
@@ -962,7 +962,7 @@ h6 {
 
 .hero-scroll {
     position: absolute;
-    bottom: 40px;
+    bottom: 30px;
     left: 60px;
     display: flex;
     align-items: center;
@@ -990,7 +990,7 @@ h6 {
 .hero-stats {
     position: absolute;
     right: 60px;
-    bottom: 60px;
+    bottom: 40px;
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -2968,8 +2968,12 @@ h6 {
     }
 
     .footer-top {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 40px 20px;
+    }
+
+    .footer-brand {
+        grid-column: span 1;
     }
 
     .footer-bottom {
@@ -4678,6 +4682,7 @@ h6 {
 .btn-partner:hover {
     background: var(--gold-light);
     transform: translateY(-3px);
+    color: white;
     box-shadow: 0 10px 30px rgba(201, 168, 76, 0.4);
 }
 
@@ -4925,6 +4930,14 @@ h6 {
     .expertise-grid-about {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .about-hero-modern {
+        min-height: 250px;
+    }
+
+    .hero-content-modern h1 {
+        font-size: 27px !important;
+    }
 }
 
 @media (max-width: 600px) {
@@ -4934,6 +4947,14 @@ h6 {
 
     .about-statement-box {
         padding: 40px 20px;
+    }
+
+    .hero-content-modern h1 {
+        font-size: 23px !important;
+    }
+
+    .about-hero-modern {
+        min-height: 150px;
     }
 
 
@@ -5663,7 +5684,7 @@ h6 {
 .loche-logo {
     max-height: 120px;
     width: auto;
-    margin-bottom: 25px;
+    margin: 25px;
     filter: brightness(0) invert(1);
     /* If the logo is dark, this makes it white for the navy background */
     transition: transform 0.3s ease;

@@ -431,4 +431,12 @@
     .heritage-visual-overlay {
         background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 25%);
     }
+
+    .heritage-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .mission-box {
+        padding: 1.5rem;
+    }
 }

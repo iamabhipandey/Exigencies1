@@ -248,11 +248,24 @@
 /* Visualization Panel */
 .visual-panel img {
     width: 100%;
-    height: 350px;
+    height: 400px;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 24px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     margin-bottom: 3rem;
+}
+
+/* Specific fix for logos that shouldn't be cropped or stretched */
+.visual-panel .logo-image {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+    margin: 0 auto 3rem;
+    display: block;
+    box-shadow: none; /* Removed shadow from logo itself */
+    border-radius: 0;
 }
 
 .brand-card-dark .visual-panel img {
@@ -402,4 +415,184 @@
     font-weight: 400;
     color: white;
     line-height: 1.4;
+}
+/* Extracted Utility Classes */
+.parallax-bg-hero {
+    background-image: url('../images/hero.png');
+}
+
+.intro-accent-gold {
+    color: var(--accent-gold);
+}
+
+.icon-check-gold {
+    color: var(--accent-gold);
+}
+
+.btn-full-width {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+    letter-spacing: 0.1em;
+    padding: 1.2rem;
+}
+
+.external-link-icon {
+    margin-left: 8px;
+    font-size: 0.8rem;
+}
+
+.medical-icon-wrapper {
+    width: 40px; 
+    height: 40px; 
+    background: rgba(201, 168, 76, 0.2); 
+    color: var(--accent-gold); 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-shrink: 0;
+}
+
+.medical-item-title {
+    color: var(--white);
+}
+
+.medical-dot-icon {
+    color: var(--accent-gold); 
+    font-size: 0.5rem;
+}
+
+.regulatory-text-accent {
+    color: var(--accent-gold); 
+    text-transform: uppercase; 
+    letter-spacing: 0.05em;
+}
+
+.section-label-mb {
+    margin-bottom: 1.5rem;
+}
+
+.btn-start-convo {
+    display: inline-block; 
+    padding: 1.2rem 3rem; 
+    font-size: 1.1rem; 
+    cursor: pointer; 
+    text-decoration: none;
+}
+
+.panel-order-1 {
+    order: 1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .channel-partner-content {
+        padding: 4rem 0;
+    }
+
+    .intro-grid {
+        gap: 3rem;
+        margin-bottom: 5rem;
+    }
+
+    .intro-content h2 {
+        font-size: 2.4rem;
+    }
+
+    .intro-visual img {
+        height: 350px;
+    }
+
+    .brand-card {
+        padding: 2.5rem 1.5rem;
+        border-radius: 24px;
+        margin-bottom: 4rem;
+    }
+
+    .brand-card .watermark {
+        font-size: 4rem;
+        padding: 1rem;
+    }
+
+    .brand-title {
+        font-size: 2rem;
+    }
+
+    .brand-card .grid-2 {
+        gap: 3rem;
+    }
+
+    .visual-panel img {
+        height: 250px;
+        margin-bottom: 2rem;
+    }
+
+    .visual-panel .logo-image {
+        height: auto;
+        max-height: 120px;
+        margin-bottom: 2rem;
+    }
+
+    .governance-unit {
+        padding: 2.5rem 1.5rem;
+        border-radius: 24px;
+        margin-bottom: 4rem;
+    }
+
+    .governance-unit .grid-2 {
+        gap: 3rem;
+    }
+
+    .governance-text h3 {
+        font-size: 2.22rem;
+    }
+
+    .promise-gradient-strip {
+        padding: 3.5rem 1.5rem;
+        border-radius: 24px;
+    }
+
+    .promise-gradient-strip h4 {
+        font-size: 1.6rem;
+    }
+}
+
+.medical-content-panel {
+    order: 2;
+}
+
+.channel-premium-img {
+    height: auto;
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 1.5rem 0; /* Balanced margin */
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific fix for split paragraph */
+.brand-desc + .channel-premium-img {
+    margin-top: -1rem; /* Pull up to balance paragraph bottom margin */
+}
+
+.channel-premium-img + .brand-desc {
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .medical-content-panel {
+        order: 1; /* Stack content first on mobile */
+    }
+
+    .channel-premium-img {
+        margin: 2rem 0;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+    }
 }

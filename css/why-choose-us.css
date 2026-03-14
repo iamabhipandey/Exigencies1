@@ -1,0 +1,322 @@
+/* Why Choose Us Page Specific Styles */
+
+.why-us-parallax-bg {
+    background-image: url('../images/about_theme.png');
+}
+
+.why-us-intro-refined {
+    padding: 10rem 0;
+    background-color: var(--white);
+    position: relative;
+}
+
+.intro-grid-refined {
+    gap: 5rem;
+    align-items: center;
+}
+
+.intro-eyebrow {
+    color: var(--accent-gold);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.intro-title {
+    margin-bottom: 2.5rem;
+    font-size: 3.2rem;
+    line-height: 1.1;
+    color: var(--primary-color);
+}
+
+.intro-divider-gold {
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-gold);
+    margin-bottom: 2.5rem;
+}
+
+.intro-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.intro-text-margin {
+    margin-bottom: 2rem;
+}
+
+.stat-highlight-mini {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #64748b;
+}
+
+.why-us-visual-side {
+    position: relative;
+}
+
+.why-us-image-wrapper {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 25px 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+.why-us-image-wrapper img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.why-us-image-wrapper img:hover {
+    transform: scale(1.05);
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: var(--accent-gold);
+    color: var(--navy);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.experience-badge .badge-num {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.experience-badge .badge-text {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.visual-accent-border-why {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 150px;
+    height: 150px;
+    border-top: 6px solid var(--accent-gold);
+    border-right: 6px solid var(--accent-gold);
+    border-radius: 0 30px 0 0;
+    z-index: -1;
+}
+
+/* Grid Section */
+.why-us-grid-refined {
+    padding: 10rem 0;
+    background-color: #f8fafc;
+    border-top: 1px solid #edf2f7;
+}
+
+.grid-header-refined {
+    max-width: 800px;
+    margin: 0 auto 7rem;
+}
+
+.grid-header-refined h3 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.grid-header-refined p {
+    color: #64748b;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 3rem;
+}
+
+.advantage-card {
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    padding: 4.5rem 3.5rem;
+    border-radius: 30px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.advantage-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(27, 42, 74, 0.08);
+    border-color: var(--accent-gold);
+}
+
+.advantage-card .card-icon {
+    font-size: 3rem;
+    color: var(--accent-gold);
+    margin-bottom: 2.5rem;
+}
+
+.advantage-card h3 {
+    font-size: 1.7rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.advantage-card p {
+    color: #475569;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* Final CTA Section */
+.final-cta-why-us {
+    padding: 10rem 0;
+    background-color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/services_theme.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+}
+
+.cta-box-refined {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--navy);
+    padding: 7rem 4rem;
+    border-radius: 40px;
+    box-shadow: 0 40px 100px rgba(27, 42, 74, 0.2);
+}
+
+.cta-eyebrow {
+    color: var(--accent-gold);
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.cta-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+}
+
+.cta-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.25rem;
+    margin-bottom: 3.5rem;
+    line-height: 1.8;
+}
+
+.btn-cta-experts {
+    background: var(--accent-gold);
+    color: var(--navy);
+    padding: 22px 55px;
+    border-radius: 55px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 15px 35px rgba(201, 168, 76, 0.3);
+    transition: all 0.4s ease;
+}
+
+.btn-cta-experts:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 25px 50px rgba(201, 168, 76, 0.4) !important;
+    background: #c9a84c !important;
+}
+
+.btn-cta-experts i {
+    margin-left: 12px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991px) {
+
+    .why-us-intro-refined,
+    .why-us-grid-refined,
+    .final-cta-why-us {
+        padding: 3rem 0;
+    }
+
+    .intro-grid-refined {
+        gap: 3rem;
+    }
+
+    .intro-title {
+        font-size: 2.5rem;
+    }
+
+    .why-us-image-wrapper img {
+        height: 450px;
+    }
+
+    .grid-header-refined h3 {
+        font-size: 2.2rem;
+    }
+
+    .cta-title {
+        font-size: 2.5rem;
+    }
+
+    .cta-box-refined {
+        padding: 2rem 1rem;
+        border-radius: 16px;
+    }
+
+    .grid-header-refined {
+        max-width: 800px;
+        margin: 0 auto 4rem;
+    }
+
+    .advantage-card {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .btn-cta-experts {
+        padding: 17px 25px;
+    }
+}
